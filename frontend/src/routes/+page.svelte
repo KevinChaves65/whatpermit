@@ -78,15 +78,6 @@ placeholder="L5B 3K6"
 class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-400"
 />
 </div>
-<div class="text-left">
-<label class="block text-sm font-semibold mb-1">Project Address</label>
-<input
-type="text"
-bind:value={address}
-placeholder="123 Main St"
-class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-400"
-/>
-</div>
 <button
 on:click={handleLookup}
 disabled={loading}
