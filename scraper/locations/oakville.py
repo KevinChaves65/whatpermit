@@ -1,90 +1,117 @@
 import requests
 from bs4 import BeautifulSoup
-from zoning_parser import extract_zoning_rules, extract_zone_codes, detect_job_type
+from urllib.parse import urljoin
 
-PERMIT_URL = "https://www.oakville.ca/home-environment/building-renovations/building-permits-inspections/building-permits/"
-ZONING_URL = "https://www.oakville.ca/business-development/planning-services/zoning/"
+from zoning_parser import (
+    extract_zoning_rules,
+    extract_zone_codes,
+    detect_job_type,
+    classify_permit_type,
+    is_valid_permit_text,
+    deep_scrape_zoning_pages
+)
 
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+PERMIT_URL = "https://www.oakville.ca/home-environment/building-renovations/building-permits-inspections/"
+ZONING_ENTRY_PAGES = [
+    "https://www.oakville.ca/town-hall/by-laws-enforcement/zoning-by-laws/"
+]
+
+BASE_URL = "https://www.oakville.ca"
+
+
+def find_project_subpages(soup):
+    keywords = ["permit", "application", "inspection", "form", "project", "submit"]
+    links = []
+
+    for link in soup.find_all("a", href=True):
+        text = link.get_text(strip=True).lower()
+        if any(k in text for k in keywords):
+            links.append({
+                "title": link.get_text(strip=True),
+                "url": urljoin(BASE_URL, link["href"])
+            })
+
+    return links
+
+
+# ---------------- PERMIT SCRAPER ----------------
 
 def scrape_oakville_permits():
-    response = requests.get(PERMIT_URL, timeout=20)
+    response = requests.get(PERMIT_URL, headers=HEADERS, timeout=20)
     soup = BeautifulSoup(response.text, "html.parser")
 
     permits = []
-    blocks = soup.find_all(["p", "li", "div"])
     seen = set()
+    blocks = soup.find_all(["p", "li", "div"])
+    project_pages = find_project_subpages(soup)
 
     print(f"🔍 [Oakville] Found {len(blocks)} content blocks")
 
     for i, block in enumerate(blocks):
-        text = block.get_text(" ", strip=True).strip()
-        lower = text.lower()
+        text = block.get_text(" ", strip=True)
 
-        if not text or text in seen:
+        if not text or len(text) < 60:
             continue
 
-        if (
-            "permit" in lower
-            and "share" not in lower
-            and "facebook" not in lower
-            and "linkedin" not in lower
-            and "twitter" not in lower
-            and "translate" not in lower
-            and len(text) > 80
-        ):
-            seen.add(text)
-            print(f"✅ VALID OAKVILLE PERMIT [{i}]: {text[:120]}")
+        fingerprint = text[:150].lower()
+        if fingerprint in seen:
+            continue
 
-            zoning_rules = extract_zoning_rules(text)
-            zone_codes = extract_zone_codes(text)
-            job_type = detect_job_type(text)
+        if not is_valid_permit_text(text):
+            continue
 
-            permits.append({
-                "city": "Oakville",
-                "type": "permit-info",
-                "jobType": job_type,
-                "permitName": "Oakville Permit",
-                "permitRequired": True,
-                "authority": "Town of Oakville",
-                "section": text[:300],
-                "zoneCodes": zone_codes,
-                "zoningRules": zoning_rules,
-                "url": PERMIT_URL
-            })
+        seen.add(fingerprint)
+        print(f"✅ VALID OAKVILLE PERMIT [{i}]: {text[:120]}")
 
-    print(f"📦 Total Oakville permits extracted: {len(permits)}")
+        permits.append({
+            "city": "Oakville",
+            "type": classify_permit_type(text),
+            "jobType": detect_job_type(text),
+            "permitName": "Oakville Permit",
+            "permitRequired": True,
+            "authority": "Town of Oakville",
+            "authorityLevel": "Municipal",
+            "section": text[:300],
+            "zoneCodes": extract_zone_codes(text),
+            "zoningRules": extract_zoning_rules(text),
+            "projectPages": project_pages,
+            "bylawLinks": ZONING_ENTRY_PAGES,
+            "url": PERMIT_URL
+        })
+
+    print(f"📦 Total Oakville permit records extracted: {len(permits)}")
     return permits
 
 
+# ---------------- ZONING SCRAPER ----------------
+
 def scrape_oakville_zoning():
-    response = requests.get(ZONING_URL, timeout=20)
-    soup = BeautifulSoup(response.text, "html.parser")
+    print("🧠 Deep zoning crawl enabled for Oakville...")
 
-    zoning_records = []
-    blocks = soup.find_all(["p", "li", "div"])
-    seen = set()
+    zoning_results = []
+    collected_urls = set()
 
-    for block in blocks:
-        text = block.get_text(" ", strip=True).strip()
+    for entry in ZONING_ENTRY_PAGES:
+        print(f"📍 Starting zoning crawl at: {entry}")
 
-        if not text or text in seen:
-            continue
+        records = deep_scrape_zoning_pages(
+            start_url=entry,
+            city="Oakville",
+            authority="Town of Oakville",
+            authority_level="Municipal",
+            max_depth=3,
+            domain_filter="oakville.ca"
+        )
 
-        zone_codes = extract_zone_codes(text)
-        zoning_rules = extract_zoning_rules(text)
+        for record in records:
+            if record["url"] not in collected_urls:
+                zoning_results.append(record)
+                collected_urls.add(record["url"])
 
-        if zone_codes or zoning_rules:
-            seen.add(text)
-
-            zoning_records.append({
-                "city": "Oakville",
-                "type": "zoning-rule",
-                "zoneCodes": zone_codes,
-                "zoningRules": zoning_rules,
-                "section": text[:300],
-                "authority": "Town of Oakville",
-                "url": ZONING_URL
-            })
-
-    print(f"📦 Total Oakville zoning records extracted: {len(zoning_records)}")
-    return zoning_records
+    print(f"📦 Total Oakville zoning records extracted: {len(zoning_results)}")
+    return zoning_results

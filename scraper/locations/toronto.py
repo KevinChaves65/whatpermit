@@ -1,148 +1,132 @@
 import requests
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin
+
 from zoning_parser import (
     extract_zoning_rules,
     extract_zone_codes,
     detect_job_type,
-    find_project_subpages,
+    classify_permit_type,
     is_valid_permit_text,
-    classify_permit_type
+    deep_scrape_zoning_pages
 )
 
+# ---------------------------------
+# CONFIG
+# ---------------------------------
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
 PERMIT_URL = "https://www.toronto.ca/services-payments/building-construction/apply-for-a-building-permit/"
-ZONING_URL = "https://www.toronto.ca/zoning/bylaw/"
+
+ZONING_ENTRY_PAGES = [
+    "https://www.toronto.ca/zoning/bylaw/",
+    "https://www.toronto.ca/services-payments/building-construction/zoning/"
+]
+
+BASE_URL = "https://www.toronto.ca"
 
 
-def extract_links(soup):
-    bylaw_links = []
-    application_links = []
+# ---------------------------------
+# PROJECT PAGE FINDER
+# ---------------------------------
+
+def find_project_subpages(soup):
+    keywords = ["permit", "application", "inspection", "form", "project", "submit"]
+    links = []
 
     for link in soup.find_all("a", href=True):
-        url = link["href"].strip()
         text = link.get_text(strip=True).lower()
-
-        if not url.startswith("http"):
-            continue
-
-        if "by-law" in text or "bylaw" in text or "regulation" in text:
-            bylaw_links.append({
+        if any(k in text for k in keywords):
+            links.append({
                 "title": link.get_text(strip=True),
-                "url": url
+                "url": urljoin(BASE_URL, link["href"])
             })
 
-        if "apply" in text or "application" in text or "permit form" in text:
-            application_links.append({
-                "title": link.get_text(strip=True),
-                "url": url
-            })
+    return links
 
-    return bylaw_links, application_links
 
+# ---------------------------------
+# PERMIT SCRAPER
+# ---------------------------------
 
 def scrape_toronto_permits():
-    response = requests.get(PERMIT_URL, timeout=20)
+    response = requests.get(PERMIT_URL, headers=HEADERS, timeout=20)
     soup = BeautifulSoup(response.text, "html.parser")
 
     permits = []
-    blocks = soup.find_all(["p", "li", "div"])
     seen = set()
+    blocks = soup.find_all(["p", "li", "div"])
 
-    bylaw_links, application_links = extract_links(soup)
     project_pages = find_project_subpages(soup)
 
     print(f"🔍 [Toronto] Found {len(blocks)} content blocks")
 
     for i, block in enumerate(blocks):
-        text = block.get_text(" ", strip=True).strip()
+        text = block.get_text(" ", strip=True)
 
-        if not text:
+        if not text or len(text) < 60:
             continue
 
-        normalized = text[:150].lower()
-
-        if normalized in seen:
+        fingerprint = text[:150].lower()
+        if fingerprint in seen:
             continue
 
         if not is_valid_permit_text(text):
             continue
 
-        zoning_rules = extract_zoning_rules(text)
-        zone_codes = extract_zone_codes(text)
-        job_type = detect_job_type(text)
-        permit_class = classify_permit_type(text)
-
-        # 🚫 Skip informational junk completely
-        if permit_class == "informational":
-            continue
-
-        seen.add(normalized)
-
+        seen.add(fingerprint)
         print(f"✅ VALID TORONTO PERMIT [{i}]: {text[:120]}")
 
         permits.append({
             "city": "Toronto",
-            "type": permit_class,
-            "jobType": job_type,
+            "type": classify_permit_type(text),
+            "jobType": detect_job_type(text),
             "permitName": "Toronto Permit",
             "permitRequired": True,
             "authority": "City of Toronto",
             "authorityLevel": "Municipal",
             "section": text[:300],
-            "zoneCodes": zone_codes,
-            "zoningRules": zoning_rules,
-            "bylawLinks": bylaw_links,
-            "applicationLinks": application_links,
+            "zoneCodes": extract_zone_codes(text),
+            "zoningRules": extract_zoning_rules(text),
             "projectPages": project_pages,
+            "bylawLinks": ZONING_ENTRY_PAGES,
             "url": PERMIT_URL
         })
 
-    print(f"📦 Total Toronto permits extracted: {len(permits)}")
+    print(f"📦 Total Toronto permit records extracted: {len(permits)}")
     return permits
 
 
+# ---------------------------------
+# ZONING SCRAPER (NEW PARSER)
+# ---------------------------------
+
 def scrape_toronto_zoning():
-    response = requests.get(ZONING_URL, timeout=20)
-    soup = BeautifulSoup(response.text, "html.parser")
+    print("🧠 Deep zoning crawl enabled for Toronto...")
 
-    zoning_records = []
-    blocks = soup.find_all(["p", "li", "div"])
-    seen = set()
+    zoning_results = []
+    collected_urls = set()
 
-    for block in blocks:
-        text = block.get_text(" ", strip=True).strip()
+    for entry in ZONING_ENTRY_PAGES:
+        print(f"📍 Starting zoning crawl at: {entry}")
 
-        if not text:
-            continue
+        records = deep_scrape_zoning_pages(
+            start_url=entry,
+            city="Toronto",
+            authority="City of Toronto",
+            authority_level="Municipal",
+            max_depth=3,
+            domain_filter="toronto.ca"
+        )
 
-        normalized = text[:150].lower()
+        for record in records:
+            if record["url"] not in collected_urls:
+                zoning_results.append(record)
+                collected_urls.add(record["url"])
 
-        if normalized in seen:
-            continue
-
-        zone_codes = extract_zone_codes(text)
-        zoning_rules = extract_zoning_rules(text)
-
-        if zone_codes or zoning_rules:
-            seen.add(normalized)
-
-            zoning_records.append({
-                "city": "Toronto",
-                "type": "zoning-rule",
-                "zoneCodes": zone_codes,
-                "zoningRules": zoning_rules,
-                "section": text[:300],
-                "authority": "City of Toronto",
-                "authorityLevel": "Municipal",
-                "url": ZONING_URL
-            })
-
-    print(f"📦 Total Toronto zoning records extracted: {len(zoning_records)}")
-    return zoning_records
-
-
-if __name__ == "__main__":
-    print("--- TORONTO PERMITS ---")
-    scrape_toronto_permits()
-
-    print("--- TORONTO ZONING ---")
-    scrape_toronto_zoning()
+    print(f"📦 Total Toronto zoning records extracted: {len(zoning_results)}")
+    return zoning_results
