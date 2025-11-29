@@ -165,29 +165,30 @@ def deep_scrape_zoning_pages(
     if visited is None:
         visited = set()
 
+    # CITY SPECIFIC RULES
+    CITY_ZONING_RULES = {
+        "Toronto": {
+            "allowed_paths": ["zoning/bylaw", "/zoning/", "/chapter-"],
+            "content_keywords": ["chapter", "zone", "general provision", "exception", "residential zone"]
+        },
+        "Mississauga": {
+            "allowed_paths": ["zoning", "zoning/by-laws", "official-plan"],
+            "content_keywords": ["zone", "zoning", "land use", "designation"]
+        },
+        "Oakville": {
+            "allowed_paths": ["zoning-by-laws", "zoning"],
+            "content_keywords": ["setback", "zone", "density", "height", "lot"]
+        }
+    }
+
+    cfg = CITY_ZONING_RULES.get(city, CITY_ZONING_RULES["Oakville"])
     results = []
 
-    ALLOWED_ZONING_PATHS = [
-        "zoning",
-        "zoning-by-law",
-        "zoning-by-laws",
-        "official-plan/zoning",
-        "planning/zoning"
-    ]
-
-    BLOCKED_PATHS = [
-        "bylaw-enforcement",
-        "noise", "garbage", "dogs", "litter",
-        "parking", "taxes", "permits-licences",
-        "election", "social", "share", "facebook",
-        "twitter", "linkedin"
-    ]
-
-    def normalize_url(url):
+    def normalize(url):
         return url.split("#")[0].split("?")[0]
 
     def is_valid_zoning_url(url):
-        url = normalize_url(url).lower()
+        url = normalize(url).lower()
 
         if not url.startswith("http"):
             return False
@@ -195,13 +196,13 @@ def deep_scrape_zoning_pages(
         if domain_filter and domain_filter not in url:
             return False
 
-        if any(block in url for block in BLOCKED_PATHS):
+        if any(block in url for block in ["facebook", "twitter", "linkedin", "noise", "garbage"]):
             return False
 
-        return any(path in url for path in ALLOWED_ZONING_PATHS)
+        return any(path in url for path in cfg["allowed_paths"])
 
     def crawl(url, depth):
-        url = normalize_url(url)
+        url = normalize(url)
 
         if depth > max_depth:
             return
@@ -219,15 +220,10 @@ def deep_scrape_zoning_pages(
 
             response = requests.get(url, headers=HEADERS, timeout=15)
             soup = BeautifulSoup(response.text, "html.parser")
-            text = soup.get_text(separator=" ", strip=True)
-            lower_text = text.lower()
+            text = soup.get_text(separator=" ", strip=True).lower()
 
-            # Content quality gate
-            if not any(term in lower_text for term in [
-                "setback", "zone", "density", "height",
-                "floor space", "fsi", "rear yard",
-                "front yard", "lot width"
-            ]):
+            # CITY SPECIFIC CONTENT FILTER
+            if not any(k in text for k in cfg["content_keywords"]):
                 return
 
             zone_codes = extract_zone_codes(text)
@@ -248,16 +244,11 @@ def deep_scrape_zoning_pages(
             })
 
             for link in soup.find_all("a", href=True):
-                next_url = urljoin(url, link["href"])
-                next_url = normalize_url(next_url)
-
-                if any(ext in next_url.lower() for ext in DISALLOWED_EXTENSIONS):
-                    continue
-
+                next_url = normalize(urljoin(url, link["href"]))
                 crawl(next_url, depth + 1)
 
         except Exception as e:
-            print(f"⚠️ Error crawling zoning page: {url} → {e}")
+            print(f"⚠️ Error: {e}")
 
     crawl(start_url, 0)
     return results

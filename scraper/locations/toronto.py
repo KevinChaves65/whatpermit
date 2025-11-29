@@ -119,7 +119,7 @@ def scrape_toronto_zoning():
             city="Toronto",
             authority="City of Toronto",
             authority_level="Municipal",
-            max_depth=3,
+            max_depth=4,
             domain_filter="toronto.ca"
         )
 

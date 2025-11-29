@@ -106,7 +106,7 @@ def scrape_mississauga_zoning():
             city="Mississauga",
             authority="City of Mississauga",
             authority_level="Municipal",
-            max_depth=3,
+            max_depth=4,
             domain_filter="mississauga.ca"
         )
 

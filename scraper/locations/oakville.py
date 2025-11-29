@@ -104,7 +104,7 @@ def scrape_oakville_zoning():
             city="Oakville",
             authority="Town of Oakville",
             authority_level="Municipal",
-            max_depth=3,
+            max_depth=4,
             domain_filter="oakville.ca"
         )
 
