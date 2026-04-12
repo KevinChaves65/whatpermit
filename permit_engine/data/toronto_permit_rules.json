@@ -1,0 +1,392 @@
+{
+  "meta": {
+    "source": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/when-do-i-need-a-building-permit/",
+    "source_authority": "City of Toronto – Toronto Building",
+    "jurisdiction": "City of Toronto, Ontario, Canada",
+    "legislation": "Ontario Building Code Act",
+    "last_scraped": "2026-04-12",
+    "notes": "This list is not exhaustive per the City of Toronto. When in doubt, contact Toronto Building at toronto.ca/building or call 311. Zoning By-law compliance is always required regardless of permit status."
+  },
+
+  "permit_required": [
+    {
+      "id": "PR-001",
+      "project_type": "New building construction",
+      "description": "Constructing any new building or structure.",
+      "permit_types": ["Building Permit"],
+      "conditions": [],
+      "keywords": ["new build", "new construction", "new house", "new home", "build from scratch"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/guides-for-other-buildings/non-residential-building-permit/"
+    },
+    {
+      "id": "PR-002",
+      "project_type": "Home addition – second or third storey",
+      "description": "Adding a second or third floor to an existing building.",
+      "permit_types": ["Building Permit"],
+      "conditions": [],
+      "keywords": ["second storey", "third storey", "second floor", "third floor", "add a floor", "pop top"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/renovation-and-new-house-guides/small-residential-additions/"
+    },
+    {
+      "id": "PR-003",
+      "project_type": "Attached garage or carport",
+      "description": "Constructing an attached garage or carport as an addition to an existing building.",
+      "permit_types": ["Building Permit"],
+      "conditions": [],
+      "keywords": ["attached garage", "attached carport", "garage addition"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/small-residential-project-guides/garages-and-carports/"
+    },
+    {
+      "id": "PR-004",
+      "project_type": "Sunroom or solarium",
+      "description": "Adding a sunroom or solarium as an addition to an existing building.",
+      "permit_types": ["Building Permit"],
+      "conditions": [],
+      "keywords": ["sunroom", "solarium", "four-season room", "sun room"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/renovation-and-new-house-guides/small-residential-additions/"
+    },
+    {
+      "id": "PR-005",
+      "project_type": "Deck or porch addition (elevated)",
+      "description": "Constructing a deck or porch as an addition to an existing building. A permit is required if the deck is more than 60 cm (24 inches) above ground level.",
+      "permit_types": ["Building Permit"],
+      "conditions": [
+        "Deck finished level is MORE than 60 cm (24 inches) above adjacent finished grade",
+        "OR the deck forms part of an exit required under the building code"
+      ],
+      "keywords": ["deck", "porch", "elevated deck", "raised deck", "backyard deck", "front porch"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/small-residential-project-guides/decks-and-porches/"
+    },
+    {
+      "id": "PR-006",
+      "project_type": "Structural or material alterations",
+      "description": "Making structural changes to an existing building including adding/removing walls, adding new windows or doors, enlarging or relocating existing windows or doors, or enclosing an existing deck/porch/patio of any size.",
+      "permit_types": ["Building Permit"],
+      "conditions": [],
+      "keywords": ["remove wall", "add wall", "load bearing wall", "open concept", "new window", "new door", "enlarge window", "relocate door", "enclose patio", "enclose deck", "enclose porch"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/renovation-and-new-house-guides/interior-alterations/"
+    },
+    {
+      "id": "PR-007",
+      "project_type": "Shed (large)",
+      "description": "Constructing a shed with an area of 15 square metres (161 sq ft) or more.",
+      "permit_types": ["Building Permit"],
+      "conditions": [
+        "Shed area is 15 m² (161 sq ft) or larger",
+        "OR shed is attached to an existing building (any size)",
+        "OR shed has plumbing (any size)"
+      ],
+      "keywords": ["shed", "garden shed", "storage shed", "large shed", "workshop shed"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/accessory-guides-sheds-cabanas-and-accessory-guides-name-tbc/"
+    },
+    {
+      "id": "PR-008",
+      "project_type": "Detached accessory structure (large)",
+      "description": "Constructing a detached accessory structure larger than 10 square metres (107 sq ft), such as a detached garage, workshop, carport, pool house, or cabana. Also required if the structure is attached to an existing building or has plumbing, regardless of size.",
+      "permit_types": ["Building Permit"],
+      "conditions": [
+        "Structure is larger than 10 m² (107 sq ft)",
+        "OR structure is attached to an existing building (any size)",
+        "OR structure has plumbing (any size)"
+      ],
+      "keywords": ["detached garage", "workshop", "detached carport", "pool house", "cabana", "garden suite", "backyard studio"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/small-residential-project-guides/garages-and-carports/"
+    },
+    {
+      "id": "PR-009",
+      "project_type": "Basement finishing (with structural, plumbing, or HVAC work)",
+      "description": "Finishing a basement where the work includes structural or material alterations, installing or modifying heating or plumbing systems, excavating or constructing foundations, underpinning, constructing a basement entrance, or adding a second suite.",
+      "permit_types": ["Building Permit", "Plumbing Permit", "Mechanical Permit"],
+      "conditions": [
+        "Work includes structural or material alterations",
+        "OR installing or modifying heating and/or plumbing systems",
+        "OR excavating and/or constructing foundations",
+        "OR basement underpinning",
+        "OR constructing a basement entrance",
+        "OR adding a second suite / legal basement apartment"
+      ],
+      "keywords": ["basement", "basement finishing", "basement renovation", "basement apartment", "second suite", "legal basement", "basement entrance", "underpinning", "basement bathroom", "basement plumbing"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/additional-dwelling-unit-guides/"
+    },
+    {
+      "id": "PR-010",
+      "project_type": "Green roof or rooftop stormwater system",
+      "description": "Installing a green roof or rooftop stormwater retention system.",
+      "permit_types": ["Building Permit"],
+      "conditions": [],
+      "keywords": ["green roof", "living roof", "rooftop garden", "stormwater retention", "rooftop stormwater"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/"
+    },
+    {
+      "id": "PR-011",
+      "project_type": "Wind turbine structure",
+      "description": "Constructing a structure used in the support of a wind turbine generator with a rated output of more than 3 kW.",
+      "permit_types": ["Building Permit"],
+      "conditions": ["Rated output exceeds 3 kW"],
+      "keywords": ["wind turbine", "wind generator", "wind energy"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/"
+    },
+    {
+      "id": "PR-012",
+      "project_type": "Solar collector or solar hot water system",
+      "description": "Installing a solar collector system or solar hot water system.",
+      "permit_types": ["Building Permit"],
+      "conditions": [],
+      "keywords": ["solar panels", "solar collector", "solar hot water", "photovoltaic", "PV system"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/"
+    },
+    {
+      "id": "PR-013",
+      "project_type": "Retaining wall (on or near public property)",
+      "description": "Constructing a retaining wall more than 1 metre (3 ft 3 in) in height that is on or adjacent to public property (including streets), building entrances, or on private property accessible to the public.",
+      "permit_types": ["Building Permit"],
+      "conditions": [
+        "Wall height exceeds 1 metre (3 ft 3 in)",
+        "AND wall is on/adjacent to public property, a building entrance, or private property accessible to the public"
+      ],
+      "keywords": ["retaining wall", "garden wall", "landscape wall"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/"
+    },
+    {
+      "id": "PR-014",
+      "project_type": "Demolition",
+      "description": "Demolishing or removing all or a portion of a building.",
+      "permit_types": ["Building Permit"],
+      "conditions": [],
+      "keywords": ["demolition", "tear down", "knock down", "remove building", "partial demolition"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/"
+    },
+    {
+      "id": "PR-015",
+      "project_type": "Chimney or fireplace installation or reconstruction",
+      "description": "Installing or reconstructing a chimney or fireplace, including a wood burning stove or fireplace.",
+      "permit_types": ["Building Permit"],
+      "conditions": [],
+      "keywords": ["chimney", "fireplace", "wood stove", "wood burning stove", "wood fireplace", "reconstruct chimney"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/"
+    },
+    {
+      "id": "PR-016",
+      "project_type": "Heating or plumbing system installation or modification",
+      "description": "Installing or modifying heating (HVAC) and/or plumbing systems beyond simple fixture replacement.",
+      "permit_types": ["Mechanical Permit", "Plumbing Permit"],
+      "conditions": [],
+      "keywords": ["HVAC", "heating system", "plumbing system", "ductwork", "furnace install", "boiler install", "new plumbing", "modify plumbing", "new HVAC"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/standalone-plumbing-mechanical-and-drains/standalone-mechanical-hvac/"
+    },
+    {
+      "id": "PR-017",
+      "project_type": "Backwater valve installation",
+      "description": "Installing a backwater valve.",
+      "permit_types": ["Plumbing Permit"],
+      "conditions": [],
+      "keywords": ["backwater valve", "sewer backup", "flood protection valve"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/standalone-plumbing-mechanical-and-drains/backwater-valve/"
+    },
+    {
+      "id": "PR-018",
+      "project_type": "Backflow prevention device installation",
+      "description": "Installing a backflow prevention device.",
+      "permit_types": ["Plumbing Permit"],
+      "conditions": [],
+      "keywords": ["backflow prevention", "backflow device", "backflow preventer"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/standalone-plumbing-mechanical-and-drains/backflow-prevention-device-permit/"
+    },
+    {
+      "id": "PR-019",
+      "project_type": "Change of use",
+      "description": "Changing a building's use, such as from residential to commercial/office, or from a single dwelling unit to a multi-dwelling unit. A permit is required even if no construction is proposed.",
+      "permit_types": ["Building Permit"],
+      "conditions": [],
+      "keywords": ["change of use", "convert to commercial", "convert to rental", "convert to multi-unit", "residential to office", "single to duplex", "single to triplex"],
+      "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/"
+    }
+  ],
+
+  "permit_not_required": [
+    {
+      "id": "PNR-001",
+      "project_type": "Low-level uncovered deck or platform",
+      "description": "An uncovered platform (e.g. deck) that meets all exemption conditions.",
+      "conditions": [
+        "Finished deck level is NOT more than 60 cm (24 inches) above adjacent finished grade",
+        "Does NOT form part of an exit required under the building code",
+        "Complies with the Zoning By-law"
+      ],
+      "keywords": ["low deck", "ground level deck", "patio", "platform"],
+      "notes": "Zoning By-law compliance is still required even without a building permit."
+    },
+    {
+      "id": "PNR-002",
+      "project_type": "Skylight installation (small building)",
+      "description": "Installing a skylight in an existing house or small building.",
+      "conditions": [
+        "Building is a house or small building 3 storeys or less",
+        "Installation does not require the removal of more than one rafter, joist, or similar structural member (trusses are not exempt)"
+      ],
+      "keywords": ["skylight", "roof window", "velux"]
+    },
+    {
+      "id": "PNR-003",
+      "project_type": "Re-cladding with non-combustible material",
+      "description": "Re-cladding a house or small building with non-combustible material other than brick or stone veneer.",
+      "conditions": [
+        "Building is 3 storeys or less",
+        "Material is non-combustible",
+        "Material is NOT brick or stone veneer (those require a permit)"
+      ],
+      "keywords": ["cladding", "siding", "re-cladding", "exterior finish", "stucco", "metal cladding"]
+    },
+    {
+      "id": "PNR-004",
+      "project_type": "Adding or replacing insulation",
+      "description": "Adding or replacing insulation in an existing building.",
+      "conditions": [],
+      "keywords": ["insulation", "attic insulation", "wall insulation", "spray foam", "batt insulation"]
+    },
+    {
+      "id": "PNR-005",
+      "project_type": "Window or door replacement (same size/location)",
+      "description": "Replacing existing windows or doors without changing their size or location.",
+      "conditions": [
+        "No change in location or size of the window and/or door",
+        "The structural support (lintel) is not affected",
+        "A new exit is not created"
+      ],
+      "keywords": ["replace window", "replace door", "window replacement", "door replacement", "new windows same size"]
+    },
+    {
+      "id": "PNR-006",
+      "project_type": "Furnace or boiler replacement (house)",
+      "description": "Replacing an existing furnace or boiler in a house.",
+      "conditions": [
+        "Replacement only — not a new installation",
+        "In a house (not a large commercial or multi-unit building)"
+      ],
+      "keywords": ["replace furnace", "new furnace", "replace boiler", "furnace replacement", "boiler replacement"]
+    },
+    {
+      "id": "PNR-007",
+      "project_type": "Additional cooling, gas fireplace, or hot water tank (house)",
+      "description": "Installing additional cooling systems, gas fireplaces, air cleaners, in-line humidifiers, or hot water tanks in a house.",
+      "conditions": [
+        "In a house",
+        "Work is an addition to existing systems, not a modification of the main system"
+      ],
+      "keywords": ["AC unit", "air conditioner", "gas fireplace", "hot water tank", "water heater", "air cleaner", "humidifier", "cooling system"]
+    },
+    {
+      "id": "PNR-008",
+      "project_type": "Plumbing fixture repair or replacement",
+      "description": "Repairing and replacing plumbing fixtures (e.g. toilet, faucet, sink).",
+      "conditions": [
+        "Replacement only — no new drain lines or supply lines",
+        "Fixture remains in the same location"
+      ],
+      "keywords": ["replace toilet", "replace faucet", "replace sink", "plumbing fixture", "fixture replacement"]
+    },
+    {
+      "id": "PNR-009",
+      "project_type": "Roof replacement (no structural work)",
+      "description": "Replacing existing roofing material where no structural work is required.",
+      "conditions": [
+        "No structural work required",
+        "Replacing like-for-like roofing material"
+      ],
+      "keywords": ["roof replacement", "new shingles", "re-roof", "replace shingles", "roof repair"]
+    },
+    {
+      "id": "PNR-010",
+      "project_type": "Basic basement finishing (no structural, plumbing, or new suite)",
+      "description": "Finishing a basement in a house where no structural changes, new plumbing, or additional dwelling units are created.",
+      "conditions": [
+        "No structural or material alterations",
+        "No additional dwelling unit(s) created",
+        "No new plumbing installed"
+      ],
+      "keywords": ["finish basement", "basement drywall", "basement flooring", "basic basement", "basement rec room"],
+      "notes": "As soon as any of the excluded conditions apply (structural changes, plumbing, or a new suite), a permit IS required. See PR-009."
+    },
+    {
+      "id": "PNR-011",
+      "project_type": "Basement waterproofing repairs",
+      "description": "Undertaking waterproofing repairs to a basement.",
+      "conditions": [],
+      "keywords": ["waterproofing", "basement waterproofing", "damp proofing", "water sealing"]
+    },
+    {
+      "id": "PNR-012",
+      "project_type": "Cabinetry and millwork installation",
+      "description": "Installing cabinetry and millwork (e.g. kitchen cabinets, built-in shelving).",
+      "conditions": [
+        "No plumbing modifications involved"
+      ],
+      "keywords": ["cabinets", "kitchen cabinets", "bathroom cabinets", "millwork", "built-in shelves", "cabinetry"]
+    },
+    {
+      "id": "PNR-013",
+      "project_type": "Seasonal plastic sheet covered structures",
+      "description": "Plastic sheet covered accessory structures such as snow canopies, driveway tents, and automotive canopies.",
+      "conditions": [
+        "Installed on or after October 15th",
+        "Removed on or before April 15th",
+        "Complies with the Zoning By-law"
+      ],
+      "keywords": ["snow canopy", "driveway tent", "car canopy", "automotive canopy", "temporary structure"]
+    },
+    {
+      "id": "PNR-014",
+      "project_type": "Retaining wall (private, not public-facing, under 1 m)",
+      "description": "Constructing a retaining wall entirely on private property that is not accessible to the public and is less than 1 metre in height.",
+      "conditions": [
+        "On private property only",
+        "Not accessible to the public",
+        "Height is less than 1 metre at any location"
+      ],
+      "keywords": ["retaining wall", "garden wall", "landscape wall", "small retaining wall"]
+    },
+    {
+      "id": "PNR-015",
+      "project_type": "Sump pump installation",
+      "description": "Installing a sump pump.",
+      "conditions": [],
+      "keywords": ["sump pump", "basement sump", "sump pit"]
+    },
+    {
+      "id": "PNR-016",
+      "project_type": "Small shed (exempt)",
+      "description": "Constructing a small shed that meets all exemption conditions.",
+      "conditions": [
+        "No more than 15 m² (161 sq ft) in gross area",
+        "No more than one storey in height",
+        "NOT attached to a building or any other structure",
+        "Used only for storage purposes ancillary to a principal building on the lot",
+        "Does NOT have plumbing"
+      ],
+      "keywords": ["small shed", "storage shed", "garden shed", "backyard shed"]
+    },
+    {
+      "id": "PNR-017",
+      "project_type": "Tent or group of tents",
+      "description": "Erecting a temporary tent or group of tents.",
+      "conditions": [
+        "No more than 60 m² in aggregate ground area",
+        "Not attached to a building",
+        "Constructed more than 3 m from any other structure"
+      ],
+      "keywords": ["tent", "party tent", "event tent", "temporary tent", "canopy tent"]
+    }
+  ],
+
+  "always_required_notes": [
+    "Zoning By-law compliance is required for ALL projects, even those that do not require a building permit.",
+    "This list is not exhaustive. When in doubt, contact Toronto Building via toronto.ca/building or call 311.",
+    "Even if a building permit is not required, other permits (e.g. electrical, heritage, sign) may still apply.",
+    "As the building owner, you are ultimately responsible for complying with all building requirements.",
+    "Failure to obtain required permits can result in costly construction delays, legal action, and/or the removal of completed work."
+  ],
+
+  "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/",
+  "contact_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/forms-documents-additional-resources/toronto-building-contact-us/",
+  "fees_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-fees/"
+}

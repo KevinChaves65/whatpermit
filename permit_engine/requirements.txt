@@ -1,0 +1,5 @@
+pymongo==4.7.2
+requests==2.31.0
+beautifulsoup4==4.12.3
+python-dotenv==1.0.1
+pdfminer.six==20221105
