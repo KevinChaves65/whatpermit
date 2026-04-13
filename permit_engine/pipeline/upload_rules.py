@@ -85,8 +85,31 @@ def _resolve_job_type(rule: dict) -> str:
     return _slugify(project_type)
 
 
-def _transform_rule(rule: dict, permit_required: bool, meta: dict) -> dict:
+def _resolve_required_forms(rule: dict, common_forms: dict) -> list[dict]:
+    """
+    Expand required_forms entries by merging form metadata from common_forms.
+    Each entry becomes: { formId, name, url, mandatory, notes }
+    """
+    result = []
+    for entry in rule.get("required_forms", []):
+        form_id = entry.get("form_id")
+        form_meta = common_forms.get(form_id, {})
+        result.append({
+            "formId": form_id,
+            "name": form_meta.get("name", form_id),
+            "url": form_meta.get("url", ""),
+            "mandatory": entry.get("mandatory", False),
+            "notes": entry.get("notes", ""),
+        })
+    # Sort: mandatory first, then conditional
+    result.sort(key=lambda f: (0 if f["mandatory"] else 1))
+    return result
+
+
+def _transform_rule(rule: dict, permit_required: bool, meta: dict, common_forms: dict) -> dict:
     """Transform a toronto_permit_rules.json entry into a permits collection document."""
+    fee = rule.get("fee")
+
     return {
         "city": "Toronto",
         "jobType": _resolve_job_type(rule),
@@ -97,27 +120,40 @@ def _transform_rule(rule: dict, permit_required: bool, meta: dict) -> dict:
         "conditions": rule.get("conditions", []),
         "permitTypes": rule.get("permit_types", []),
         "keywords": rule.get("keywords", []),
-        "cost": 0,
-        "costNotes": "See fees_url for current fee schedule",
-        "documents": [],
+        "fee": fee,
+        "cost": fee.get("amount") or 0 if fee else 0,
+        "costNotes": fee.get("unit", "See fees page for current schedule") if fee else "",
+        "documents": rule.get("documents", []),
+        "requiredForms": _resolve_required_forms(rule, common_forms),
         "authority": meta.get("source_authority", "City of Toronto – Toronto Building"),
         "authorityLevel": "Municipal",
         "section": meta.get("legislation", "Ontario Building Code Act"),
         "bylawReference": "Ontario Building Code Act",
-        "url": rule.get("apply_url", meta.get("source", "")),
+        "url": rule.get("guide_url", rule.get("apply_url", meta.get("source", ""))),
+        "applyOnlineUrl": rule.get("apply_online_url") or "",
         "notes": rule.get("notes", ""),
-        "feesUrl": "",
+        "feesUrl": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-fees/",
     }
 
 
 def upload(rules_path: str = RULES_PATH):
-    client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
+    print(f"🔌 Connecting to MongoDB...")
+    client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=30000)
     db = client[DB_NAME]
+
+    # Verify connection before proceeding
+    try:
+        client.admin.command("ping")
+        print("✅ MongoDB connected")
+    except Exception as e:
+        print(f"❌ MongoDB connection failed: {e}")
+        raise
 
     with open(rules_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     meta = data.get("meta", {})
+    common_forms = data.get("common_forms", {})
 
     # -------------------------------------------------------
     # 1. Store full JSON in permit_rules collection
@@ -144,7 +180,7 @@ def upload(rules_path: str = RULES_PATH):
     saved = updated = 0
 
     for rule in permit_required_rules:
-        doc = _transform_rule(rule, permit_required=True, meta=meta)
+        doc = _transform_rule(rule, permit_required=True, meta=meta, common_forms=common_forms)
         res = db["permits"].update_one(
             {"city": doc["city"], "jobType": doc["jobType"], "ruleId": doc["ruleId"]},
             {"$set": doc},
@@ -156,7 +192,7 @@ def upload(rules_path: str = RULES_PATH):
             saved += 1
 
     for rule in permit_not_required_rules:
-        doc = _transform_rule(rule, permit_required=False, meta=meta)
+        doc = _transform_rule(rule, permit_required=False, meta=meta, common_forms=common_forms)
         res = db["permits"].update_one(
             {"city": doc["city"], "jobType": doc["jobType"], "ruleId": doc["ruleId"]},
             {"$set": doc},

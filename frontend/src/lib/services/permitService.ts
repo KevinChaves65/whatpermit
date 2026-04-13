@@ -1,7 +1,6 @@
 export async function checkPermit(payload: {
-postal_code: string;
-city: string;
-job_type: string;
+  city: string;
+  job_type: string;
 }) {
 const response = await fetch('http://localhost:8080/api/permit/check', {
 method: 'POST',
