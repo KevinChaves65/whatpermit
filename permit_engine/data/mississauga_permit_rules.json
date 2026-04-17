@@ -1,0 +1,2189 @@
+{
+  "meta": {
+    "source": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/when-a-building-permit-is-required/",
+    "forms_source": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/building-documents-and-forms/",
+    "drawings_source": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/",
+    "fees_source": "https://www.mississauga.ca/publication/building-permit-fee-schedule/",
+    "apply_online_url": "https://eplans.mississauga.ca/",
+    "source_authority": "City of Mississauga \u00e2\u20ac\u201c Planning and Building Department, Building Division",
+    "jurisdiction": "City of Mississauga, Ontario, Canada",
+    "legislation": "Ontario Building Code Act, S.O. 1992, c.23; Ontario Building Code O.Reg 332/12; Building By-Law 0236-2024; User Fees & Charges By-law 0221-2024",
+    "last_scraped": "2026-04-16",
+    "notes": "This list is not exhaustive. When in doubt, contact the City of Mississauga Building Division at 311 (905-615-4311 outside City limits) or visit mississauga.ca. Zoning By-law compliance is always required regardless of permit status. All applications must be submitted through the ePlans portal at eplans.mississauga.ca.",
+    "contact": {
+      "phone": "311 (905-615-4311 from outside City limits)",
+      "fax": "905-896-5638",
+      "permit_admin_phone": "905-896-5619",
+      "fire_prevention_email": "fire.prevention@mississauga.ca",
+      "fire_prevention_phone": "905-896-5908",
+      "tax_email": "tax@mississauga.ca",
+      "address": "300 City Centre Drive, 3rd Floor, Mississauga, ON L5B 3C1",
+      "website": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/",
+      "hours": "Monday to Friday, 8:30 a.m. to 4:30 p.m."
+    }
+  },
+  "common_forms": {
+    "note": "These forms appear on nearly every permit application. They are listed here once for reference and repeated in each rule's required_forms array with context-specific notes.",
+    "F-001": {
+      "id": "F-001",
+      "name": "Application for a Permit to Construct or Demolish",
+      "description": "The primary building permit application form. Required for ALL permit submissions. Submitted through ePlans portal.",
+      "url": "https://www.mississauga.ca/wp-content/uploads/2026/02/10093729/Application-for-a-Permit-to-Construct-or-Demolish.pdf"
+    },
+    "F-002": {
+      "id": "F-002",
+      "name": "Applicable Law Form",
+      "description": "Required for all permit applications. Indicates which additional approvals may be required for your project (heritage, conservation authority, MTO, site plan, etc.).",
+      "url": "https://www.mississauga.ca/publication/applicable-law/"
+    },
+    "F-003": {
+      "id": "F-003",
+      "name": "Schedule 1: Designer Information",
+      "description": "Required for all permit applications where a designer (other than a homeowner) prepared the drawings. Must be signed and dated.",
+      "url": "https://www.mississauga.ca/wp-content/uploads/2026/02/10093109/Schedule-1-Designer-Information.pdf"
+    },
+    "F-004": {
+      "id": "F-004",
+      "name": "Schedule 1: Homeowner",
+      "description": "Used when the homeowner is acting as their own designer/builder. Alternative to F-003 for owner-built projects.",
+      "url": "https://www.mississauga.ca/wp-content/uploads/2026/02/10093111/Schedule-1-Homeowner.pdf"
+    },
+    "F-005": {
+      "id": "F-005",
+      "name": "SB-12 EEDS (Prescriptive) \u00e2\u20ac\u201c Energy Efficiency Design Summary",
+      "description": "Required for new residential construction and additions to demonstrate energy efficiency compliance under Ontario Building Code Supplemental Standard SB-12.",
+      "url": "http://www7.mississauga.ca/Departments/PB/BuildingForms/SB12EEDSPrescriptive.pdf"
+    },
+    "F-006": {
+      "id": "F-006",
+      "name": "SB-12 EEDS (Performance) \u00e2\u20ac\u201c Energy Efficiency Design Summary",
+      "description": "Alternative to F-005 when using a performance-based energy compliance method.",
+      "url": "http://www7.mississauga.ca/Departments/PB/BuildingForms/SB12EEDSPerformance.pdf"
+    },
+    "F-007": {
+      "id": "F-007",
+      "name": "Residential Mechanical Ventilation Design Summary Form",
+      "description": "Required for new residential buildings and major additions. Documents mechanical ventilation design.",
+      "url": "https://www.mississauga.ca/wp-content/uploads/2025/01/16115942/residential-mechanical-ventilation-design-summary-form.pdf"
+    },
+    "F-008": {
+      "id": "F-008",
+      "name": "Single Dwelling Unit Information Letter",
+      "description": "Required for new houses, garage conversions, basement finishes, additions, and below-grade entrances. Confirms single-unit status.",
+      "url": "http://www7.mississauga.ca/Departments/PB/BuildingForms/SecondUnitInformationLetter.pdf"
+    },
+    "F-009": {
+      "id": "F-009",
+      "name": "Roof Truss Layout Review Form",
+      "description": "Required when engineered roof trusses are proposed. Documents truss system design.",
+      "url": "http://www7.mississauga.ca/Departments/PB/BuildingForms/rooftrusslayoutreviewform.pdf"
+    },
+    "F-010": {
+      "id": "F-010",
+      "name": "Commitment to General Review",
+      "description": "Required for non-residential projects. Confirms an architect/engineer will provide general review of construction.",
+      "url": "http://www7.mississauga.ca/Departments/PB/BuildingForms/generalfieldreviewdeclaration.pdf"
+    },
+    "F-011": {
+      "id": "F-011",
+      "name": "Letter of Use",
+      "description": "Required for all non-residential and ICI building permit applications and change of use applications. Describes the proposed use of the space.",
+      "url": "http://www7.mississauga.ca/Departments/PB/BuildingForms/letterofuse.pdf"
+    },
+    "F-012": {
+      "id": "F-012",
+      "name": "Demolition Control Permit Declaration",
+      "description": "Required for all residential demolition permit applications.",
+      "url": "http://www7.mississauga.ca/Departments/PB/Building/Demo/demodeclaration.pdf"
+    },
+    "F-013": {
+      "id": "F-013",
+      "name": "General Review Demolition Commitment Certificate",
+      "description": "Required for non-residential demolition projects. Confirms architect/engineer oversight.",
+      "url": "http://www7.mississauga.ca/Departments/PB/BuildingForms/generalreviewdemolitioncommitmentcertificate.pdf"
+    },
+    "F-014": {
+      "id": "F-014",
+      "name": "Residential Furnace Replacement Form (Datasheet)",
+      "description": "Required specifically for residential furnace replacement permit applications.",
+      "url": "http://www7.mississauga.ca/Departments/PB/BuildingForms/residentialfurnacereplacementdatasheet.pdf"
+    },
+    "F-015": {
+      "id": "F-015",
+      "name": "Application to Register a Second Unit",
+      "description": "Required when creating or legalizing a second residential unit (basement apartment, garden suite, etc.).",
+      "url": "http://www7.mississauga.ca/Departments/PB/Second%20Units/Application%20to%20Registry%20a%20Second%20Unit.pdf"
+    },
+    "F-016": {
+      "id": "F-016",
+      "name": "Water Service Pipe Sizing",
+      "description": "Required for new houses, garage conversions, and units with three or more plumbing fixtures. Documents water service sizing calculations.",
+      "url": null
+    },
+    "F-017": {
+      "id": "F-017",
+      "name": "Schedule 2: Sewage System Installer Information",
+      "description": "Required when the application involves sewage system work.",
+      "url": "https://www.mississauga.ca/wp-content/uploads/2026/02/10093113/Schedule-2-Sewage-System-Installer-Information.pdf"
+    },
+    "F-018": {
+      "id": "F-018",
+      "name": "SB-10 ASHRAE 90.1 (Level 1) \u00e2\u20ac\u201c Non-Residential Energy",
+      "description": "Energy efficiency compliance form for non-residential buildings using ASHRAE 90.1-2013 standard.",
+      "url": "http://www7.mississauga.ca/Departments/PB/BuildingForms/SB10ASHRAE90.1.pdf"
+    },
+    "F-019": {
+      "id": "F-019",
+      "name": "Supplementary Information Form",
+      "description": "Required for new houses and non-residential buildings. Pages 1, 2, and 5 typically required for residential new builds.",
+      "url": null
+    }
+  },
+  "fee_schedule": {
+    "effective": "2025-01-01 to 2025-12-31",
+    "note": "Fees shown are from the 2025 Building Division fee schedule. The 2026 fees are updated in Schedule B of the Building By-Law. Check mississauga.ca/publication/building-permit-fee-schedule/ for current rates.",
+    "fee_formula": "Permit Fee = SI (Service Index) x A (floor area in m\u00c2\u00b2)",
+    "pre_screen_fee": {
+      "amount": 50.0,
+      "currency": "CAD",
+      "refundable": false,
+      "note": "Non-refundable. Paid when submitting online through ePlans."
+    },
+    "minimum_fees": {
+      "residential_part9": {
+        "amount": 244.0,
+        "note": "Minimum for residential projects within Division B, Part 9 of the Building Code. 2026 rate; 2025 rate was $237."
+      },
+      "non_residential_or_part3": {
+        "amount": 386.0,
+        "note": "Minimum for non-residential and residential projects outside Division B, Part 9. 2026 rate; 2025 rate was $375."
+      }
+    },
+    "service_index_rates": {
+      "note": "Service Index (SI) rates from 2025 schedule. Used in formula: Fee = SI x floor area (m\u00c2\u00b2).",
+      "new_buildings_and_additions": {
+        "group_c_detached_semi_townhouse_duplex": {
+          "si": 18.44,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_c_multiple_unit_residential": {
+          "si": 19.93,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_c_hotel_motel": {
+          "si": 20.79,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_c_residential_addition": {
+          "si": 13.55,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_c_unheated_addition": {
+          "si": 11.89,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_c_detached_garage_shed_accessory": {
+          "si": 6.24,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_c_additional_residential_unit_conversion": {
+          "si": 11.0,
+          "unit": "$/m\u00c2\u00b2",
+          "note": "Plus minimum residential fee"
+        },
+        "group_a_assembly": {
+          "si": 25.98,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_a_restaurant_shell": {
+          "si": 23.1,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_b_institutional": {
+          "si": 28.87,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_d_business_shell": {
+          "si": 19.06,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_d_business_finished": {
+          "si": 23.15,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_e_mercantile_shell": {
+          "si": 14.51,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_e_mercantile_finished": {
+          "si": 19.32,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_f_warehouse_shell_under_10000m2": {
+          "si": 12.41,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_f_warehouse_finished_under_10000m2": {
+          "si": 14.44,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_f_warehouse_shell_over_10000m2": {
+          "si": 9.81,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "group_f_warehouse_finished_over_10000m2": {
+          "si": 13.86,
+          "unit": "$/m\u00c2\u00b2"
+        }
+      },
+      "miscellaneous_area_based": {
+        "finishing_basements_detached_semi_townhouse": {
+          "si": 5.48,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "interior_alterations_all_groups": {
+          "si": 6.64,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "hvac_independent_of_building_permit": {
+          "si": 1.37,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "new_roof_or_replacement": {
+          "si": 5.48,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "roof_membrane_replacement": {
+          "si": 4.88,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "repair_or_reclad_wall_per_surface_area": {
+          "si": 0.47,
+          "unit": "$/m\u00c2\u00b2"
+        },
+        "demolition_ici_or_house": {
+          "amount": 22.0,
+          "unit": "$/100m\u00c2\u00b2 GFA demolished"
+        },
+        "plumbing_fixtures_all_groups": {
+          "amount": 41.0,
+          "unit": "$/fixture"
+        },
+        "inside_sanitary_storm_piping": {
+          "amount": 1.65,
+          "unit": "$/linear m"
+        },
+        "outside_water_services_piping": {
+          "amount": 4.59,
+          "unit": "$/linear m"
+        },
+        "retaining_walls": {
+          "amount": 11.0,
+          "unit": "$/linear m"
+        },
+        "balcony_guard_replacements": {
+          "amount": 17.0,
+          "unit": "$/linear m",
+          "max": 1784.0
+        },
+        "window_replacements_multi_or_non_residential": {
+          "amount": 9.0,
+          "unit": "$/each"
+        },
+        "signs": {
+          "si": 36.0,
+          "unit": "$/m\u00c2\u00b2 of sign face",
+          "min": 375.0
+        }
+      },
+      "flat_fees": {
+        "deck_porch_basement_stairwell_to_house": {
+          "amount": 237.0,
+          "unit": "flat fee/each"
+        },
+        "fireplace_wood_stove": {
+          "amount": 237.0,
+          "unit": "flat fee/each"
+        },
+        "furnace_replacement": {
+          "amount": 237.0,
+          "unit": "flat fee"
+        },
+        "boiler_replacement_house": {
+          "amount": 237.0,
+          "unit": "flat fee"
+        },
+        "boiler_replacement_non_house": {
+          "amount": 416.0,
+          "unit": "flat fee"
+        },
+        "hvac_unit_installation_unit_heater_rooftop": {
+          "amount": 237.0,
+          "unit": "flat fee"
+        },
+        "full_heating_system_replacement_house": {
+          "amount": 237.0,
+          "unit": "flat fee"
+        },
+        "full_heating_system_replacement_non_house": {
+          "amount": 416.0,
+          "unit": "flat fee"
+        },
+        "solar_collectors_house": {
+          "amount": 309.0,
+          "unit": "flat fee"
+        },
+        "solar_collectors_non_house": {
+          "amount": 684.0,
+          "unit": "flat fee"
+        },
+        "geothermal_alternate_heating_house": {
+          "amount": 237.0,
+          "unit": "flat fee"
+        },
+        "geothermal_alternate_heating_non_house": {
+          "amount": 416.0,
+          "unit": "flat fee"
+        },
+        "fire_alarm_system": {
+          "amount": 774.0,
+          "unit": "flat fee"
+        },
+        "fire_suppression_system": {
+          "amount": 416.0,
+          "unit": "flat fee"
+        },
+        "demolition_accessory_structure": {
+          "amount": 237.0,
+          "unit": "flat fee"
+        },
+        "communication_transmission_tower": {
+          "amount": 416.0,
+          "unit": "flat fee/each"
+        },
+        "backwater_valve_residential": {
+          "amount": 50.0,
+          "unit": "flat fee"
+        },
+        "backwater_valve_ici": {
+          "amount": 249.0,
+          "unit": "flat fee"
+        },
+        "backflow_preventer": {
+          "amount": 416.0,
+          "unit": "flat fee"
+        },
+        "new_sewage_system": {
+          "amount": 714.0,
+          "unit": "flat fee"
+        },
+        "repair_sewage_system": {
+          "amount": 357.0,
+          "unit": "flat fee"
+        },
+        "commercial_kitchen_exhaust": {
+          "amount": 416.0,
+          "unit": "flat fee"
+        },
+        "temporary_tents": {
+          "amount": 220.0,
+          "unit": "flat fee/each"
+        },
+        "revision_material_change": {
+          "amount": 155.0,
+          "unit": "$/hour of review"
+        },
+        "alternative_solution_review": {
+          "amount": 1189.0,
+          "unit": "flat fee/application"
+        },
+        "transfer_of_permit": {
+          "amount": 237.0,
+          "unit": "administrative fee (non-refundable)"
+        },
+        "deferral_of_revocation": {
+          "amount": 237.0,
+          "unit": "administrative fee (non-refundable)"
+        },
+        "discharge_order_to_comply": {
+          "amount": 600.0,
+          "unit": "administrative fee (non-refundable)"
+        },
+        "conditional_permit_additional": {
+          "amount_min": 1010.0,
+          "amount_max": 8920.0,
+          "note": "20% of permit fee, min $1,010 max $8,920. Each extension = $1,010."
+        }
+      }
+    },
+    "payment_options": {
+      "under_5000": "Full fee at time of application",
+      "5000_to_40000": "Option A: Full fee at application. Option B: 50% at application, balance at permit issuance.",
+      "over_40000": "Option A: Full fee at application. Option B: Minimum $20,000 deposit at application, balance at permit issuance.",
+      "method": "Electronic payment only"
+    },
+    "refund_policy": {
+      "admin_functions_only": "85% refund on written request",
+      "departmental_review_commenced": "65% refund on written request",
+      "permit_issued": "45% refund, less 5% per inspection conducted. No refund after 6 months of permit issuance.",
+      "admin_fees": "Non-refundable"
+    }
+  },
+  "permit_required": [
+    {
+      "id": "PR-001",
+      "project_type": "New building construction",
+      "description": "Constructing any new residential or non-residential building, including new detached houses, garden suites, townhouses, semi-detached houses, and commercial/industrial buildings.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "Any new building or structure over 10 sq m requires a permit.",
+        "Any new building of any size that contains plumbing requires a permit.",
+        "Garden suites (detached additional residential units) require a building permit.",
+        "Pre-approved garden suite plans (studio: 40 m\u00c2\u00b2, one-bedroom: 55 m\u00c2\u00b2) are available to fast-track approval."
+      ],
+      "keywords": [
+        "new build",
+        "new construction",
+        "new house",
+        "new home",
+        "build from scratch",
+        "garden suite",
+        "new detached",
+        "new semi-detached",
+        "new townhouse"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/new-house-or-garden-suite/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "residential_detached_semi_townhouse": "SI $18.44/m\u00c2\u00b2 (min $244)",
+        "residential_addition": "SI $13.55/m\u00c2\u00b2 (min $244)",
+        "garden_suite": "SI $18.44/m\u00c2\u00b2 as new detached (min $244)",
+        "effective": "2025 rates; check fee schedule for 2026 updates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form, submitted via ePlans."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form required for all applications."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information \u00e2\u20ac\u201c required when a designer prepares drawings."
+        },
+        {
+          "form_id": "F-005",
+          "mandatory": true,
+          "notes": "SB-12 EEDS (Prescriptive) energy efficiency form for new residential Part 9 buildings."
+        },
+        {
+          "form_id": "F-007",
+          "mandatory": true,
+          "notes": "Residential Mechanical Ventilation Design Summary Form."
+        },
+        {
+          "form_id": "F-008",
+          "mandatory": true,
+          "notes": "Single Dwelling Unit Information Letter."
+        },
+        {
+          "form_id": "F-009",
+          "mandatory": false,
+          "notes": "Roof Truss Layout Review Form \u00e2\u20ac\u201c if engineered trusses proposed."
+        },
+        {
+          "form_id": "F-015",
+          "mandatory": false,
+          "notes": "Application to Register a Second Unit \u00e2\u20ac\u201c if a secondary suite is included."
+        },
+        {
+          "form_id": "F-016",
+          "mandatory": true,
+          "notes": "Water Service Pipe Sizing documentation."
+        },
+        {
+          "form_id": "F-019",
+          "mandatory": true,
+          "notes": "Supplementary Information Form (pages 1, 2, and 5)."
+        }
+      ],
+      "additional_approvals_possible": [
+        "Conservation authority (if near regulated land)",
+        "Heritage Advisory Committee (if heritage property)",
+        "Ministry of Transportation Ontario (MTO) \u00e2\u20ac\u201c if within MTO controlled area",
+        "Committee of Adjustment (if zoning variances required)",
+        "Site Plan Control",
+        "Tree removal permit"
+      ],
+      "job_type": "new-building"
+    },
+    {
+      "id": "PR-002",
+      "project_type": "Home addition",
+      "description": "Adding floor area to an existing residential building, including rear additions, second-storey additions, side additions, sunrooms, and attached garages.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "All additions to existing buildings require a permit.",
+        "Unheated additions (e.g., enclosed porch, sunroom without heating) are permitted but at a lower SI rate.",
+        "Deck, fireplace, and unfinished basement proposed at the same time as a new single-dwelling get no additional fee."
+      ],
+      "keywords": [
+        "addition",
+        "rear addition",
+        "second storey",
+        "second floor addition",
+        "side addition",
+        "sunroom",
+        "bump out",
+        "extend house",
+        "add a room"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/addition/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "heated_addition": "SI $13.55/m\u00c2\u00b2 (min $244)",
+        "unheated_addition": "SI $11.89/m\u00c2\u00b2 (min $244)",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        },
+        {
+          "form_id": "F-005",
+          "mandatory": true,
+          "notes": "SB-12 EEDS (Prescriptive) energy efficiency form."
+        },
+        {
+          "form_id": "F-007",
+          "mandatory": true,
+          "notes": "Residential Mechanical Ventilation Design Summary Form."
+        },
+        {
+          "form_id": "F-008",
+          "mandatory": true,
+          "notes": "Single Dwelling Unit Information Letter."
+        },
+        {
+          "form_id": "F-009",
+          "mandatory": false,
+          "notes": "Roof Truss Layout Review Form \u00e2\u20ac\u201c if applicable."
+        },
+        {
+          "form_id": "F-016",
+          "mandatory": false,
+          "notes": "Water Service Pipe Sizing \u00e2\u20ac\u201c if plumbing affected."
+        }
+      ],
+      "required_drawings": [
+        "Site plan (metric scale, north arrow, property lines, setbacks, lot coverage, existing/proposed labels)",
+        "Floor plans (room dimensions, structural framing, smoke alarm/CO detector locations, plumbing, HVAC)",
+        "Roof plan (slopes, ventilation, rafter/truss specs)",
+        "Elevations for each side (grades, wall cladding, window/door locations, glazing percentages)"
+      ],
+      "job_type": "addition"
+    },
+    {
+      "id": "PR-003",
+      "project_type": "Deck, porch, or balcony",
+      "description": "Constructing a new deck, porch, or balcony attached to a residential property, or repairing/replacing guards on apartment/condo balconies.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "A permit is required for any deck MORE THAN 0.61 m (2 feet) above grade.",
+        "Covered porches require a permit regardless of height.",
+        "Balcony construction, replacement, or guard repairs on apartments/condos require a permit.",
+        "Decks proposed at the same time as a new single dwelling unit have no additional fee."
+      ],
+      "keywords": [
+        "deck",
+        "porch",
+        "balcony",
+        "raised deck",
+        "covered porch",
+        "wraparound porch",
+        "guard replacement",
+        "balcony repair"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/deck-porch-or-balcony/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "amount": 237.0,
+        "unit": "Flat fee per deck/porch (min $244). Balcony guard: $17/linear m, max $1,784.",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        }
+      ],
+      "required_drawings": [
+        "Site plan (scale, north arrow, property address, existing buildings labeled, proposed deck hatched/labeled 'PROPOSED', setbacks from all property lines, lot coverage calculations)",
+        "Floor plan (structural framing: size, type, grade, spacing, span direction of all structural members; section marks; soil bearing capacity; foundation size and material)",
+        "Roof plan if applicable (slopes, ventilation, skylight locations, rafter spacing)",
+        "Elevations for each side (grade level, existing/proposed work, finished floor levels, guard heights, roof overhang)"
+      ],
+      "job_type": "deck"
+    },
+    {
+      "id": "PR-004",
+      "project_type": "Detached garage, shed (over 15 m\u00c2\u00b2), or accessory structure",
+      "description": "Constructing a new detached garage, carport, or shed exceeding 15 square metres, or any accessory structure containing plumbing.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "Detached garages ALWAYS require a permit.",
+        "Sheds OVER 15 m\u00c2\u00b2 (approximately 161 sq ft) require a permit.",
+        "Any shed or structure of ANY SIZE that contains plumbing requires a permit.",
+        "Gazebos over 10 m\u00c2\u00b2 require a permit.",
+        "One-storey, free-standing sheds UNDER 15 m\u00c2\u00b2 with no plumbing and used for storage only are EXEMPT.",
+        "Gazebos 10 m\u00c2\u00b2 or smaller are EXEMPT.",
+        "Fee: Detached garage/shed as accessory to house is SI $6.24/m\u00c2\u00b2 (min $244).",
+        "Demolition of accessory structure: flat fee $237."
+      ],
+      "keywords": [
+        "detached garage",
+        "carport",
+        "shed",
+        "storage shed",
+        "workshop",
+        "gazebo",
+        "accessory structure",
+        "outbuilding",
+        "garden shed"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/accessory-structure-shed-gazebo-detached-garage/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "detached_garage_shed": "SI $6.24/m\u00c2\u00b2 (min $244)",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        }
+      ],
+      "required_drawings": [
+        "Site plan (metric scale, north arrow, address, existing/proposed structures labeled, property line dimensions, setbacks, lot coverage calculations, driveway details)",
+        "Floor plan (north arrow, room dimensions, door/window sizes, structural framing details, floor drains, ventilation, foundation specs including soil bearing capacity, footing size/thickness/material, slab specs)",
+        "Roof plan (slopes, ventilation, rafter sizing and spacing)",
+        "Elevations for each side (grade level, existing/proposed work, finished floor levels, wall finishes, window/door locations, vertical dimensions to ridge/eaves, glazing percentages)"
+      ],
+      "zoning_reference": "https://www.mississauga.ca/services-and-programs/building-and-renovating/zoning-information/zoning-for-residential-projects/accessory-buildings-and-structures/",
+      "job_type": "garage"
+    },
+    {
+      "id": "PR-005",
+      "project_type": "Basement apartment / Second unit / Additional residential unit",
+      "description": "Creating a self-contained secondary suite within an existing home (basement apartment, in-law suite, garage conversion to unit), or adding an attached additional residential unit.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "A building permit is required to create any second unit or basement apartment.",
+        "A second unit registration is also required \u00e2\u20ac\u201d submit the Application to Register a Second Unit.",
+        "Property owners can add up to TWO additional residential units (ARUs) on detached, semi-detached, or townhome properties.",
+        "Building permit fees are FULLY REFUNDED when constructing or legalizing ARUs.",
+        "Second and third ARUs are exempt from most municipal charges (development charges).",
+        "Townhouses have restrictions; condominiums prohibit attached units without board approval.",
+        "Heritage properties may need Heritage Advisory Committee review.",
+        "Garden suites (detached ARUs): one permitted per lot, requires separate municipal address, 1.2m-wide x 2.1m-high emergency access pathway (max 45m from street).",
+        "Zoning regulations apply (setbacks, height, coverage) \u00e2\u20ac\u201d verify using the city's property information tool.",
+        "Pre-approved garden suite plans available (studio 40 m\u00c2\u00b2, one-bedroom 55 m\u00c2\u00b2) to expedite review."
+      ],
+      "keywords": [
+        "basement apartment",
+        "second unit",
+        "secondary suite",
+        "in-law suite",
+        "basement suite",
+        "additional residential unit",
+        "ARU",
+        "garden suite",
+        "granny flat",
+        "accessory dwelling"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/second-unit-basement-apartment/",
+      "additional_resource_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-more-units-on-your-property/additional-residential-units/",
+      "pre_approved_plans_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-more-units-on-your-property/pre-approved-garden-suite-plans/",
+      "second_unit_guidelines_url": "https://www.mississauga.ca/publication/guidelines-to-build-second-units/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "amount": "SI $11.00/m\u00c2\u00b2 plus minimum residential fee (2025 rate)",
+        "incentive": "Building permit fees FULLY REFUNDED for ARUs. Most municipal charges also waived.",
+        "effective": "2025 rates; incentive program in effect"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        },
+        {
+          "form_id": "F-015",
+          "mandatory": true,
+          "notes": "Application to Register a Second Unit \u00e2\u20ac\u201c required for all second unit permits."
+        },
+        {
+          "form_id": "F-016",
+          "mandatory": false,
+          "notes": "Water Service Pipe Sizing \u00e2\u20ac\u201c required for three or more units on the property."
+        }
+      ],
+      "required_drawings": [
+        "Site plan (metric scale, north arrow, address, all structures labeled, dimensioned property lines, setbacks, lot coverage, GFA breakdown including second unit area, driveway details)",
+        "Floor plans (room uses/sizes, interior/exterior dimensions, legend distinguishing existing/demolished/proposed walls, structural framing, smoke alarms and CO detectors, plumbing fixtures, HVAC grille locations, cross-section details)",
+        "Elevations (if exterior changes) \u00e2\u20ac\u201c each side showing grade, wall cladding, window/door locations, glazing percentages"
+      ],
+      "job_type": "second-unit"
+    },
+    {
+      "id": "PR-006",
+      "project_type": "Basement finishing (non-secondary suite)",
+      "description": "Finishing an unfinished basement in a residential property (adding walls, rooms, bathroom, etc.) where it will NOT become a separate rental unit.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "A permit is required for finishing a basement.",
+        "Fee is based on SI $5.48/m\u00c2\u00b2 of finished basement area.",
+        "If the basement is being converted to a secondary suite/apartment, use PR-005 instead."
+      ],
+      "keywords": [
+        "finish basement",
+        "basement renovation",
+        "basement development",
+        "basement bedroom",
+        "basement bathroom",
+        "rec room",
+        "basement drywall"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/finish-basement/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "amount": "SI $5.48/m\u00c2\u00b2 of finished area (min $244)",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        },
+        {
+          "form_id": "F-008",
+          "mandatory": true,
+          "notes": "Single Dwelling Unit Information Letter."
+        }
+      ],
+      "required_drawings": [
+        "Site plan (metric scale, north arrow, address, existing structures labeled, dimensioned property lines, rights-of-way, easements, landscaping)",
+        "Floor plan (room uses/sizes, interior/exterior dimensions, door/window sizes, legend for existing/demolished/proposed walls, structural framing details, smoke alarm and CO detector locations, plumbing fixture locations existing/proposed, floor drains, ventilation, HVAC grille locations, section marks)"
+      ],
+      "job_type": "basement"
+    },
+    {
+      "id": "PR-007",
+      "project_type": "Interior renovations",
+      "description": "Structural or mechanical changes to the interior of a residential building including removing/adding walls, changing room layouts, or modifying systems.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "Interior alterations require a permit when structural work, plumbing, or mechanical changes are involved.",
+        "Purely cosmetic work (painting, flooring, cabinetry) does NOT require a permit.",
+        "Fee for residential interior alterations: SI $6.64/m\u00c2\u00b2."
+      ],
+      "keywords": [
+        "interior renovation",
+        "interior alteration",
+        "remove wall",
+        "load-bearing wall",
+        "structural wall",
+        "open concept",
+        "kitchen renovation",
+        "bathroom renovation"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/residential-interior-alterations/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "amount": "SI $6.64/m\u00c2\u00b2 of altered area (min $244)",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        }
+      ],
+      "required_drawings": [
+        "Site plan (metric scale, north arrow, address, existing structures, dimensioned property lines)",
+        "Floor plan (north arrow, room uses/sizes, interior/exterior dimensions, door/window sizes, legend for existing/demolished/proposed walls, structural framing details, smoke alarm and CO detector locations, plumbing fixture locations, floor drains, ventilation, HVAC grille locations)"
+      ],
+      "job_type": "renovation"
+    },
+    {
+      "id": "PR-008",
+      "project_type": "Demolition (residential)",
+      "description": "Complete demolition of a residential building or structure.",
+      "permit_types": [
+        "Building Permit",
+        "Demolition Permit"
+      ],
+      "conditions": [
+        "A permit is required to demolish any residential building.",
+        "Demolition of an accessory structure (garage, shed): flat fee $237.",
+        "Demolition of a house/ICI building: $22.00 per 100 m\u00c2\u00b2 of Gross Floor Area demolished.",
+        "Property owners may qualify for tax reductions under Municipal Act Sections 357 and 358 \u00e2\u20ac\u201d contact tax@mississauga.ca.",
+        "If work is done without a permit, an 'order to comply' may be issued; discharge fee is $600."
+      ],
+      "keywords": [
+        "demolish",
+        "demolition",
+        "tear down",
+        "knock down",
+        "remove building",
+        "demo permit",
+        "tear down house"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/demolish-a-residential-building/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "house_or_ici": "$22.00 per 100 m\u00c2\u00b2 of GFA demolished (min $244)",
+        "accessory_structure": "$237.00 flat fee",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        },
+        {
+          "form_id": "F-012",
+          "mandatory": true,
+          "notes": "Demolition Control Permit Declaration \u00e2\u20ac\u201c required for all residential demolitions."
+        }
+      ],
+      "required_drawings": [
+        "Site plan (metric scale, north arrow, address, legal description, existing structures labeled 'to be demolished' or 'existing to remain', dimensioned property lines, rights-of-way, easements)"
+      ],
+      "job_type": "demolition"
+    },
+    {
+      "id": "PR-009",
+      "project_type": "Demolition (non-residential)",
+      "description": "Complete demolition of a commercial, industrial, or institutional building.",
+      "permit_types": [
+        "Building Permit",
+        "Demolition Permit"
+      ],
+      "conditions": [
+        "A permit is required to demolish any non-residential building.",
+        "Fee: $22.00 per 100 m\u00c2\u00b2 of GFA demolished (min $386).",
+        "Requires a General Review Demolition Commitment Certificate (architect/engineer oversight).",
+        "A Demolition Report must be submitted."
+      ],
+      "keywords": [
+        "commercial demolition",
+        "demolish commercial",
+        "demolish industrial",
+        "ICI demolition",
+        "non-residential demolition"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/demolish-a-non-residential-building/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "amount": "$22.00 per 100 m\u00c2\u00b2 of GFA demolished (min $386)",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        },
+        {
+          "form_id": "F-013",
+          "mandatory": true,
+          "notes": "General Review Demolition Commitment Certificate."
+        }
+      ],
+      "required_drawings": [
+        "Site plan (property address, road location, dimensioned property lines, outline of existing structures to be demolished)"
+      ],
+      "job_type": "demolition"
+    },
+    {
+      "id": "PR-010",
+      "project_type": "Retaining wall",
+      "description": "Construction of a new retaining wall.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "Retaining walls UNDER 1 metre high do NOT require a permit.",
+        "Retaining walls OVER 1 metre high require a permit.",
+        "Height threshold applies especially for walls on or adjacent to public property (streets, building entrances, private property accessible to the public).",
+        "Fee: $11.00 per linear metre."
+      ],
+      "keywords": [
+        "retaining wall",
+        "concrete wall",
+        "stone wall",
+        "landscape wall",
+        "slope retention",
+        "terracing"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/when-a-building-permit-is-required/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "amount": "$11.00 per linear metre (min $244)",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        }
+      ],
+      "job_type": "retaining-wall"
+    },
+    {
+      "id": "PR-011",
+      "project_type": "Below-grade entrance / Basement walkout",
+      "description": "Creating a new below-grade entrance (exterior stairwell) to a basement or constructing a basement walkout.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "A permit is required for any below-grade entrance or basement walkout.",
+        "Excavation of foundation walls (underpinning) also requires a permit."
+      ],
+      "keywords": [
+        "below grade entrance",
+        "basement walkout",
+        "exterior basement stairs",
+        "basement stairwell",
+        "walk-out basement",
+        "underpinning"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/below-grade-entrance/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "amount": "$237.00 flat fee (same category as decks/porches to houses)",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        },
+        {
+          "form_id": "F-008",
+          "mandatory": true,
+          "notes": "Single Dwelling Unit Information Letter."
+        }
+      ],
+      "required_drawings": [
+        "Site plan (metric scale, north arrow, address, legal description, existing structures, proposed entrance hatched and labeled 'PROPOSED', dimensioned property lines, setbacks from all property lines)",
+        "Floor plans (basement and ground floor) \u00e2\u20ac\u201c room uses, dimensions, legend for existing/demolished/proposed walls, floor drains, ventilation, section marks; basement must show soil bearing capacity, foundation wall/footing specs, step-down footing details, concrete slab and granular fill specs"
+      ],
+      "job_type": "basement-entrance"
+    },
+    {
+      "id": "PR-012",
+      "project_type": "Residential exterior alterations (windows, doors, siding, roofing requiring structural changes, skylights)",
+      "description": "Changes to the exterior of a residential building including adding or enlarging windows/doors, installing skylights, re-cladding with new material, or alterations affecting roof height/slope.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "NEW windows or doors require a permit.",
+        "ENLARGED windows or doors require a permit.",
+        "REPLACING windows or doors with the SAME SIZE does NOT require a permit.",
+        "Re-cladding with DIFFERENT materials requires a permit.",
+        "Re-cladding with the SAME material does NOT require a permit.",
+        "Re-shingling a roof (like-for-like) does NOT require a permit.",
+        "Roof EXTENSIONS or alterations that change height or slope require a permit.",
+        "Skylights require a permit.",
+        "Dormers require a permit."
+      ],
+      "keywords": [
+        "new window",
+        "enlarge window",
+        "new door",
+        "enlarge door",
+        "skylight",
+        "dormer",
+        "re-cladding",
+        "siding replacement",
+        "different siding",
+        "exterior alteration",
+        "roof extension"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/residential-exterior-alteration/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "recladding_repair_wall": "SI $0.47/m\u00c2\u00b2 of wall surface area (min $244)",
+        "general_alterations": "SI $6.64/m\u00c2\u00b2 or applicable rate (min $244)",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        }
+      ],
+      "required_drawings": [
+        "Site plan (metric scale, property dimensions, legal description, existing/proposed structures labeled, setbacks)",
+        "Floor plan (structural framing details, door/window sizes, section marks)",
+        "Elevations for each side of the project (grade levels, finished floor levels, exterior finishes, roof slope, window/door locations, glazing percentage relative to exposed wall)"
+      ],
+      "job_type": "exterior-alteration"
+    },
+    {
+      "id": "PR-013",
+      "project_type": "Garage conversion to residential unit",
+      "description": "Converting an attached or detached garage into a habitable residential space or self-contained unit.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "A permit is required for all garage conversions to residential use.",
+        "Heat loss calculations and mechanical ventilation design are required.",
+        "If converting to a secondary suite, also register the second unit."
+      ],
+      "keywords": [
+        "garage conversion",
+        "convert garage",
+        "garage to living space",
+        "garage apartment",
+        "garage suite"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/garage-conversion/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "amount": "SI $6.64/m\u00c2\u00b2 for interior alteration portion (min $244)",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        },
+        {
+          "form_id": "F-007",
+          "mandatory": true,
+          "notes": "Residential Mechanical Ventilation Design Summary Form."
+        },
+        {
+          "form_id": "F-008",
+          "mandatory": true,
+          "notes": "Single Dwelling Unit Information Letter."
+        },
+        {
+          "form_id": "F-016",
+          "mandatory": true,
+          "notes": "Water Service Pipe Sizing documentation."
+        }
+      ],
+      "required_drawings": [
+        "Site plan (metric scale, north arrow, address, legal description, existing/proposed structures, lot coverage, site statistics including garage area, driveway yard dimensions, landscaped percentages)",
+        "Floor plans (room dimensions, door/window sizes, structural framing, smoke alarm/CO detector locations, plumbing fixture locations, HVAC grille positions)",
+        "Roof plans (slopes, ventilation, skylight locations, rafter/truss specs)",
+        "Elevations if exterior changes occur (grade level, existing/proposed work, finished floor heights)"
+      ],
+      "job_type": "garage-conversion"
+    },
+    {
+      "id": "PR-014",
+      "project_type": "HVAC / Furnace / Mechanical systems",
+      "description": "Installation or replacement of heating, ventilation, and air conditioning systems including furnaces, boilers, heat pumps, geothermal systems, and independent HVAC work.",
+      "permit_types": [
+        "Building Permit",
+        "HVAC Permit"
+      ],
+      "conditions": [
+        "Furnace replacement (higher efficiency model or different fuel type) requires a permit.",
+        "Altering furnace ducts requires a permit.",
+        "Rooftop HVAC replacement requires a permit.",
+        "HVAC unit installation (unit heater, rooftop unit, make-up air unit) requires a permit.",
+        "Full heating system replacement requires a permit.",
+        "Geothermal systems require a permit.",
+        "Solar thermal (hot water) systems require a permit.",
+        "Kitchen exhaust systems require a permit.",
+        "Commercial kitchen exhaust: $416 flat fee.",
+        "Spray booth: $416/unit.",
+        "Like-for-like furnace filter or thermostat replacement does NOT require a permit."
+      ],
+      "keywords": [
+        "furnace",
+        "furnace replacement",
+        "HVAC",
+        "heat pump",
+        "air conditioner",
+        "geothermal",
+        "boiler",
+        "heating system",
+        "ductwork",
+        "mechanical",
+        "forced air",
+        "rooftop unit",
+        "make-up air"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/furnace-replacement/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "furnace_replacement": "$237.00 flat fee",
+        "boiler_replacement_house": "$237.00 flat fee",
+        "boiler_replacement_non_house": "$416.00 flat fee",
+        "hvac_unit_installation": "$237.00 flat fee",
+        "full_heating_system_house": "$237.00 flat fee",
+        "full_heating_system_non_house": "$416.00 flat fee",
+        "hvac_independent_work": "SI $1.37/m\u00c2\u00b2 of floor area",
+        "geothermal_house": "$237.00 flat fee",
+        "geothermal_non_house": "$416.00 flat fee",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-014",
+          "mandatory": true,
+          "notes": "Residential Furnace Replacement Form (Datasheet) \u00e2\u20ac\u201c required for furnace replacements."
+        }
+      ],
+      "conditional_documents": [
+        "Heat Loss Calculations \u00e2\u20ac\u201c required only if making alterations to ducts",
+        "HVAC Sample Drawing \u00e2\u20ac\u201c required only if making alterations to ducts"
+      ],
+      "job_type": "mechanical-plumbing"
+    },
+    {
+      "id": "PR-015",
+      "project_type": "Plumbing and drainage",
+      "description": "Adding, removing, or relocating plumbing fixtures; installing or repairing drainage systems, backwater valves, backflow preventers, or private sewage systems.",
+      "permit_types": [
+        "Building Permit",
+        "Plumbing Permit"
+      ],
+      "conditions": [
+        "Adding, removing, or relocating plumbing fixtures requires a permit.",
+        "Replacing existing plumbing fixtures in the SAME LOCATION does NOT require a permit.",
+        "Plumbing drainage installation or repair requires a permit.",
+        "Backflow preventers require a permit.",
+        "Backwater valves require a permit.",
+        "Private sewage system installation/repair/replacement requires a permit.",
+        "Sewer system work requires a permit.",
+        "Sump pump installation does NOT require a permit.",
+        "Fee: $41 per plumbing fixture; $1.65/linear m inside piping; $4.59/linear m outside piping."
+      ],
+      "keywords": [
+        "plumbing",
+        "bathroom",
+        "add bathroom",
+        "relocate plumbing",
+        "backwater valve",
+        "backflow preventer",
+        "sewage system",
+        "private sewage",
+        "drainage",
+        "sewer",
+        "plumbing fixture"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/when-a-building-permit-is-required/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "plumbing_fixtures": "$41.00 per fixture",
+        "inside_piping": "$1.65 per linear m",
+        "outside_piping": "$4.59 per linear m",
+        "backwater_valve_residential": "$50.00 flat fee",
+        "backwater_valve_ici": "$249.00 flat fee",
+        "backflow_preventer": "$416.00 flat fee",
+        "new_sewage_system": "$714.00 flat fee",
+        "repair_sewage_system": "$357.00 flat fee",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        }
+      ],
+      "job_type": "mechanical-plumbing"
+    },
+    {
+      "id": "PR-016",
+      "project_type": "Fireplace, wood stove, or chimney",
+      "description": "Installation of a new wood-burning fireplace, wood stove, or gas fireplace used for heating; installation or reconstruction of a chimney.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "Wood-burning fireplaces require a permit.",
+        "Wood stoves require a permit.",
+        "Gas fireplaces used for HEATING require a permit.",
+        "DECORATIVE gas fireplaces (not used for heating) do NOT require a permit.",
+        "Installing or reconstructing a chimney or fireplace requires a permit.",
+        "Fee: $237.00 flat fee per fireplace/wood stove.",
+        "Fireplaces proposed at the same time as a new single-dwelling unit have no additional permit fee."
+      ],
+      "keywords": [
+        "fireplace",
+        "wood stove",
+        "wood-burning fireplace",
+        "gas fireplace",
+        "chimney",
+        "insert",
+        "pellet stove",
+        "fire pit installation"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/when-a-building-permit-is-required/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "amount": "$237.00 flat fee per fireplace/wood stove",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        }
+      ],
+      "job_type": "chimney-fireplace"
+    },
+    {
+      "id": "PR-017",
+      "project_type": "Solar panels / Solar collectors",
+      "description": "Installation of solar panels (photovoltaic) or solar thermal collectors on a residential or non-residential building.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "Solar panels and solar collector systems require a building permit.",
+        "Fee for a house: $309.00 flat fee.",
+        "Fee for non-residential/other than a house: $684.00 flat fee."
+      ],
+      "keywords": [
+        "solar panel",
+        "solar panels",
+        "solar collector",
+        "PV system",
+        "photovoltaic",
+        "solar hot water",
+        "solar thermal",
+        "solar energy"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/when-a-building-permit-is-required/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "house": "$309.00 flat fee",
+        "non_house": "$684.00 flat fee",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        }
+      ],
+      "job_type": "solar"
+    },
+    {
+      "id": "PR-018",
+      "project_type": "Fire safety systems",
+      "description": "Installation of fire alarm systems, fire suppression systems, sprinkler systems, or repairs to fire-damaged buildings.",
+      "permit_types": [
+        "Building Permit",
+        "Fire Permit"
+      ],
+      "conditions": [
+        "Fire alarm systems require a permit: $774.00 flat fee.",
+        "Fire suppression systems require a permit: $416.00 flat fee.",
+        "Sprinkler systems require a permit.",
+        "Fire damage repairs require a permit.",
+        "Generators connected to life safety equipment require a permit.",
+        "Electromagnetic locks (maglocks) require a permit: $309/each, max $1,783.",
+        "For fire inspections: email fire.prevention@mississauga.ca or call 905-896-5908."
+      ],
+      "keywords": [
+        "fire alarm",
+        "sprinkler",
+        "fire suppression",
+        "fire damage",
+        "fire safety",
+        "maglock",
+        "electromagnetic lock",
+        "generator life safety"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/when-a-building-permit-is-required/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "fire_alarm_system": "$774.00 flat fee",
+        "fire_suppression_system": "$416.00 flat fee",
+        "electromagnetic_locks": "$309.00 each, max $1,783.00",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        }
+      ],
+      "job_type": "fire-safety"
+    },
+    {
+      "id": "PR-019",
+      "project_type": "Change of use",
+      "description": "Changing the occupancy or use of a building or part of a building (e.g., converting residential to commercial, or changing between commercial occupancy types).",
+      "permit_types": [
+        "Building Permit",
+        "Change of Use Permit"
+      ],
+      "conditions": [
+        "A permit is required when the change of use represents an increase in hazard as defined by Ontario Building Code Article 1.3.1.4.",
+        "Triggered by: change of major occupancy designated in OBC Table 1.3.1.4; converting a Group C suite to more than one Group C suite; converting to gaming premises; changing to a post-disaster building; changing to a retirement home; changing from/to a farm building; change where previous use cannot be determined.",
+        "Exempt if: the change in use results from construction already covered under a Section 8 permit.",
+        "A Zoning Certificate of Occupancy is also required to approve the change of use.",
+        "A Letter of Use must be submitted with all non-residential permit applications.",
+        "Fee: Residential interior alteration rate SI $6.64/m\u00c2\u00b2 or non-residential alteration rate."
+      ],
+      "keywords": [
+        "change of use",
+        "change occupancy",
+        "occupancy change",
+        "convert residential to commercial",
+        "convert to office",
+        "new business",
+        "repurpose building",
+        "zoning certificate of occupancy"
+      ],
+      "guide_url": "https://www.mississauga.ca/wp-content/uploads/2020/07/29125641/Changes-in-the-Use-of-a-Building.pdf",
+      "zoning_certificate_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/zoning-information/zoning-certificate-of-occupancy/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "amount": "SI $6.64/m\u00c2\u00b2 for interior alterations (min $386 for non-residential)",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        },
+        {
+          "form_id": "F-010",
+          "mandatory": true,
+          "notes": "Commitment to General Review \u00e2\u20ac\u201c for non-residential projects."
+        },
+        {
+          "form_id": "F-011",
+          "mandatory": true,
+          "notes": "Letter of Use \u00e2\u20ac\u201c required for all non-residential and change of use applications."
+        }
+      ],
+      "job_type": "change-of-use"
+    },
+    {
+      "id": "PR-020",
+      "project_type": "Roof replacement / Re-roofing (structural change)",
+      "description": "Installing a new roof, replacing a roof structure, or roof alterations that change the height or slope.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "Re-SHINGLING (like-for-like replacement of shingles) does NOT require a permit.",
+        "New roof construction requires a permit.",
+        "Roof MEMBRANE replacement requires a permit.",
+        "Roof EXTENSIONS or structural alterations affecting height or slope require a permit.",
+        "Fee: SI $5.48/m\u00c2\u00b2 for new roof or replacement; $4.88/m\u00c2\u00b2 for roof membrane replacement."
+      ],
+      "keywords": [
+        "new roof",
+        "roof replacement",
+        "re-roofing",
+        "roof structure",
+        "roof membrane",
+        "flat roof",
+        "roof extension",
+        "change roof pitch"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/when-a-building-permit-is-required/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "new_roof_or_replacement": "SI $5.48/m\u00c2\u00b2 of roof area (min $244)",
+        "roof_membrane_replacement": "SI $4.88/m\u00c2\u00b2 of roof area (min $244)",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Schedule 1 Designer Information."
+        }
+      ],
+      "job_type": "roof"
+    },
+    {
+      "id": "PR-021",
+      "project_type": "Non-residential new building, addition, or alteration",
+      "description": "New commercial, industrial, or institutional construction; additions to non-residential buildings; interior or exterior alterations to commercial/industrial/institutional spaces.",
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "All new non-residential buildings require a permit.",
+        "All additions to non-residential buildings require a permit.",
+        "Interior and exterior alterations require a permit.",
+        "Drawings must be signed, sealed, and dated by an architect, professional engineer, and/or qualified designer.",
+        "A Commitment to General Review is required.",
+        "A Letter of Use must be included.",
+        "Minimum fee: $386 for non-residential projects."
+      ],
+      "keywords": [
+        "commercial renovation",
+        "office renovation",
+        "store renovation",
+        "industrial building",
+        "commercial addition",
+        "ICI permit",
+        "tenant fit-out"
+      ],
+      "guide_url": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/non-residential-building-or-addition/",
+      "apply_online_url": "https://eplans.mississauga.ca/",
+      "fee": {
+        "group_d_business_shell": "SI $19.06/m\u00c2\u00b2",
+        "group_d_business_finished": "SI $23.15/m\u00c2\u00b2",
+        "group_e_mercantile_shell": "SI $14.51/m\u00c2\u00b2",
+        "group_e_mercantile_finished": "SI $19.32/m\u00c2\u00b2",
+        "group_f_industrial_shell": "SI $12.41/m\u00c2\u00b2",
+        "interior_alterations": "SI $6.64/m\u00c2\u00b2",
+        "min_fee": "$386",
+        "effective": "2025 rates"
+      },
+      "required_forms": [
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Primary application form."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Applicable Law Form."
+        },
+        {
+          "form_id": "F-010",
+          "mandatory": true,
+          "notes": "Commitment to General Review."
+        },
+        {
+          "form_id": "F-011",
+          "mandatory": true,
+          "notes": "Letter of Use."
+        },
+        {
+          "form_id": "F-018",
+          "mandatory": true,
+          "notes": "SB-10 energy efficiency form for non-residential."
+        }
+      ],
+      "required_drawings": [
+        "Site plan (metric, north arrow, address, legal description, existing/proposed structures, parking specs, lot area/frontage, GFA by floor, parking count)",
+        "Architectural drawings (room uses, fire separations, partition/door schedules)",
+        "Structural drawings (design criteria)",
+        "HVAC drawings (distribution system plans, duct sizes, damper locations)",
+        "Plumbing drawings (fixture locations, drain pipe sizing)",
+        "Electrical drawings (exit signs, emergency lights, fire alarm, full layout by licensed engineer)",
+        "Sprinkler drawings (shop-quality with hydraulic calculations)",
+        "Elevations for each side (grade, finishes, window/door locations, glazing percentages)"
+      ],
+      "job_type": "non-residential"
+    }
+  ],
+  "permit_not_required": [
+    {
+      "id": "PNR-001",
+      "project_type": "Painting and decorating",
+      "description": "Interior painting, wallpapering, or other purely decorative work.",
+      "conditions": [
+        "No structural, plumbing, or mechanical changes involved."
+      ],
+      "keywords": [
+        "paint",
+        "painting",
+        "wallpaper",
+        "decorate",
+        "decorating"
+      ],
+      "job_type": "cosmetic"
+    },
+    {
+      "id": "PNR-002",
+      "project_type": "Flooring and cabinetry",
+      "description": "Replacing flooring, installing cabinetry or cupboards.",
+      "conditions": [
+        "No structural modifications. Cabinets and cupboards in same location."
+      ],
+      "keywords": [
+        "flooring",
+        "hardwood",
+        "tile",
+        "carpet",
+        "cabinetry",
+        "cupboards",
+        "cabinets",
+        "kitchen cabinets"
+      ],
+      "job_type": "cosmetic"
+    },
+    {
+      "id": "PNR-003",
+      "project_type": "Window or door replacement (same size)",
+      "description": "Replacing existing windows or doors with new units of the same size and in the same location.",
+      "conditions": [
+        "Must be same size and same location.",
+        "NEW windows/doors or ENLARGED openings DO require a permit.",
+        "Like-for-like replacement only."
+      ],
+      "keywords": [
+        "window replacement",
+        "replace window",
+        "door replacement",
+        "replace door",
+        "new window same size"
+      ],
+      "job_type": "maintenance"
+    },
+    {
+      "id": "PNR-004",
+      "project_type": "Plumbing fixture replacement (same location)",
+      "description": "Replacing a toilet, sink, bathtub, or other plumbing fixture in the exact same location without changing drainage.",
+      "conditions": [
+        "Must be same location \u00e2\u20ac\u201d no relocation of fixtures.",
+        "Adding, removing, or relocating fixtures DOES require a permit."
+      ],
+      "keywords": [
+        "toilet replacement",
+        "sink replacement",
+        "faucet",
+        "bathtub replacement",
+        "fixture replacement"
+      ],
+      "job_type": "maintenance"
+    },
+    {
+      "id": "PNR-005",
+      "project_type": "Fence",
+      "description": "Building or replacing a residential fence.",
+      "conditions": [
+        "Building permits are generally NOT required for residential fences in Mississauga.",
+        "Zoning and Fence By-law requirements still apply (max 2m rear/side yard, max 1m front yard closed, max 1.5m front yard open).",
+        "Fences cannot be made of barbed wire or hazardous materials.",
+        "Cannot be built on City property, highways, or road allowances.",
+        "Corner lot and sight triangle restrictions apply.",
+        "For non-compliant fences, apply for a fence exemption through Licensing, Permits & Regulatory Services."
+      ],
+      "keywords": [
+        "fence",
+        "privacy fence",
+        "garden fence",
+        "boundary fence",
+        "wood fence",
+        "chain link fence"
+      ],
+      "reference_url": "https://www.mississauga.ca/services-and-programs/home-and-yard/fences/",
+      "fence_bylaw_url": "https://www.mississauga.ca/publication/fence-by-law/",
+      "job_type": "fence"
+    },
+    {
+      "id": "PNR-006",
+      "project_type": "Deck under 0.61 m (2 feet) high",
+      "description": "Constructing a low-level deck or platform that is 600 mm or less above finished grade.",
+      "conditions": [
+        "Must be less than 0.61 m (approximately 2 feet) above finished grade.",
+        "Decks over 0.61 m high DO require a permit.",
+        "Zoning regulations (setbacks, lot coverage) still apply."
+      ],
+      "keywords": [
+        "low deck",
+        "ground level deck",
+        "platform deck",
+        "floating deck",
+        "low level deck"
+      ],
+      "job_type": "deck"
+    },
+    {
+      "id": "PNR-007",
+      "project_type": "Shed (under 15 m\u00c2\u00b2, no plumbing, single-storey)",
+      "description": "A free-standing, one-storey storage shed under 15 square metres with no plumbing.",
+      "conditions": [
+        "Must be under 15 m\u00c2\u00b2 (approximately 161 sq ft) in floor area.",
+        "Must be single-storey.",
+        "Must be free-standing (not attached to house or other structure).",
+        "Must NOT contain any plumbing.",
+        "Must be used for storage only.",
+        "Sheds over 15 m\u00c2\u00b2 OR containing plumbing DO require a permit.",
+        "Detached garages ALWAYS require a permit.",
+        "Zoning regulations (setbacks, coverage) still apply."
+      ],
+      "keywords": [
+        "shed",
+        "storage shed",
+        "small shed",
+        "garden shed",
+        "tool shed"
+      ],
+      "job_type": "shed"
+    },
+    {
+      "id": "PNR-008",
+      "project_type": "Gazebo (10 m\u00c2\u00b2 or smaller)",
+      "description": "Installing a prefabricated or built gazebo that is 10 square metres or smaller.",
+      "conditions": [
+        "Must be 10 m\u00c2\u00b2 or smaller.",
+        "Gazebos OVER 10 m\u00c2\u00b2 DO require a permit.",
+        "Zoning regulations still apply."
+      ],
+      "keywords": [
+        "gazebo",
+        "pergola",
+        "small gazebo",
+        "backyard gazebo"
+      ],
+      "job_type": "shed"
+    },
+    {
+      "id": "PNR-009",
+      "project_type": "Re-shingling (like-for-like roof shingle replacement)",
+      "description": "Replacing asphalt shingles or other roofing material with the same type of material on an existing roof.",
+      "conditions": [
+        "Must be same material \u00e2\u20ac\u201d like-for-like replacement.",
+        "No structural changes to roof framing.",
+        "Roof EXTENSIONS or changes to height/slope DO require a permit.",
+        "New roofing (different material or new structure) may require a permit."
+      ],
+      "keywords": [
+        "re-shingle",
+        "replace shingles",
+        "new shingles",
+        "asphalt shingles",
+        "roof shingles",
+        "re-roofing",
+        "shingle replacement"
+      ],
+      "job_type": "roof"
+    },
+    {
+      "id": "PNR-010",
+      "project_type": "Re-cladding with same material",
+      "description": "Replacing exterior cladding or siding with the exact same material.",
+      "conditions": [
+        "Must be the same material.",
+        "Re-cladding with DIFFERENT materials DOES require a permit.",
+        "Structural changes to wall assembly may require a permit."
+      ],
+      "keywords": [
+        "replace siding",
+        "same siding",
+        "reclad",
+        "vinyl siding replacement",
+        "same cladding"
+      ],
+      "job_type": "exterior-alteration"
+    },
+    {
+      "id": "PNR-011",
+      "project_type": "Retaining wall under 1 metre",
+      "description": "Building a retaining wall less than 1 metre (approximately 3 feet 3 inches) in height.",
+      "conditions": [
+        "Must be less than 1 metre in height.",
+        "Retaining walls OVER 1 metre high DO require a permit.",
+        "Zoning regulations still apply."
+      ],
+      "keywords": [
+        "low retaining wall",
+        "small retaining wall",
+        "garden wall",
+        "short retaining wall"
+      ],
+      "job_type": "retaining-wall"
+    },
+    {
+      "id": "PNR-012",
+      "project_type": "Decorative gas fireplace",
+      "description": "Installing a decorative gas fireplace that is not used for heating purposes.",
+      "conditions": [
+        "Must be purely decorative \u00e2\u20ac\u201d not a primary or supplementary heat source.",
+        "Gas fireplaces used for HEATING DO require a permit.",
+        "Wood-burning fireplaces ALWAYS require a permit.",
+        "Gas connections may require separate gas contractor permit/inspection under TSSA."
+      ],
+      "keywords": [
+        "decorative fireplace",
+        "gas fireplace decoration",
+        "electric fireplace",
+        "ornamental fireplace"
+      ],
+      "job_type": "chimney-fireplace"
+    },
+    {
+      "id": "PNR-013",
+      "project_type": "Driveway resurfacing or widening",
+      "description": "Repaving, resurfacing, or widening an existing driveway.",
+      "conditions": [
+        "Building permit not required.",
+        "Driveway widening must still comply with zoning by-law (minimum landscaping requirements).",
+        "If adding a new catch basin or drainage structure, a permit may be required."
+      ],
+      "keywords": [
+        "driveway",
+        "repave driveway",
+        "resurface driveway",
+        "widen driveway",
+        "asphalt driveway"
+      ],
+      "job_type": "landscaping"
+    },
+    {
+      "id": "PNR-014",
+      "project_type": "Landscaping",
+      "description": "General landscaping work including planting, grading, gardening.",
+      "conditions": [
+        "Building permit not required for general landscaping.",
+        "Significant grade changes near structures may affect drainage and zoning compliance.",
+        "Zoning regulations still apply."
+      ],
+      "keywords": [
+        "landscaping",
+        "garden",
+        "planting",
+        "grass",
+        "sod",
+        "trees",
+        "shrubs"
+      ],
+      "job_type": "landscaping"
+    },
+    {
+      "id": "PNR-015",
+      "project_type": "Concrete pad",
+      "description": "Pouring a concrete pad or patio at grade level.",
+      "conditions": [
+        "Building permit not required for a basic concrete pad.",
+        "If the pad supports a structure requiring a permit, the permit for the structure would apply.",
+        "Must comply with zoning setback requirements."
+      ],
+      "keywords": [
+        "concrete pad",
+        "concrete patio",
+        "concrete slab",
+        "patio stones"
+      ],
+      "job_type": "landscaping"
+    },
+    {
+      "id": "PNR-016",
+      "project_type": "Minor masonry repairs",
+      "description": "Tuckpointing, repointing mortar joints, or minor brick repair.",
+      "conditions": [
+        "Must be minor/cosmetic repair only.",
+        "Structural masonry work or significant recladding may require a permit."
+      ],
+      "keywords": [
+        "tuckpointing",
+        "repointing",
+        "mortar repair",
+        "brick repair",
+        "masonry repair"
+      ],
+      "job_type": "maintenance"
+    },
+    {
+      "id": "PNR-017",
+      "project_type": "Eavestroughs (standard installation)",
+      "description": "Installing or replacing eavestroughs and downspouts where drainage is contained on the property.",
+      "conditions": [
+        "Drainage must remain on private property.",
+        "If connecting to external drainage systems with catch basins, a permit may be required."
+      ],
+      "keywords": [
+        "eavestrough",
+        "gutters",
+        "downspout",
+        "eaves",
+        "gutter replacement"
+      ],
+      "job_type": "maintenance"
+    },
+    {
+      "id": "PNR-018",
+      "project_type": "Sump pump installation",
+      "description": "Installing a sump pump in an existing sump pit.",
+      "conditions": [
+        "Sump pump installation does NOT require a permit.",
+        "If installing a NEW sump pit (excavation, new drain connections), a permit may be required."
+      ],
+      "keywords": [
+        "sump pump",
+        "sump pit",
+        "basement waterproofing"
+      ],
+      "job_type": "mechanical-plumbing"
+    },
+    {
+      "id": "PNR-019",
+      "project_type": "Basement damp-proofing",
+      "description": "Applying waterproofing or damp-proofing to exterior basement walls.",
+      "conditions": [
+        "Does not require a permit.",
+        "If excavation or foundation work is involved, a permit may be required."
+      ],
+      "keywords": [
+        "damp proof",
+        "damp-proofing",
+        "waterproof basement",
+        "basement sealing"
+      ],
+      "job_type": "maintenance"
+    },
+    {
+      "id": "PNR-020",
+      "project_type": "Insulation (existing wall/attic \u00e2\u20ac\u201d same location, no vapour barrier changes)",
+      "description": "Adding insulation to existing walls, attic, or crawlspace without structural changes.",
+      "conditions": [
+        "Adding insulation to existing spaces generally does not require a permit.",
+        "If the insulation work requires opening walls for structural changes or new vapour barriers as part of an alteration, a permit may be required for the broader renovation.",
+        "Insulation as part of a re-clad or addition does require a permit."
+      ],
+      "keywords": [
+        "insulation",
+        "attic insulation",
+        "blown-in insulation",
+        "spray foam",
+        "batt insulation",
+        "wall insulation"
+      ],
+      "job_type": "insulation"
+    }
+  ],
+  "additional_resources": {
+    "eplans_portal": "https://eplans.mississauga.ca/",
+    "eplans_account_creation": "https://eplans.mississauga.ca/Portal/Profile/Add/Mississauga",
+    "eplans_process_map": "https://www7.mississauga.ca/Departments/PB/ePlans/EPLANSPROCESSMAP.pdf",
+    "eplans_help_and_support": "https://www.mississauga.ca/services-and-programs/building-and-renovating/eplans-help-and-support/",
+    "building_permit_video": "https://www.youtube.com/watch?v=-TPF8XFbsas&t=36s",
+    "zoning_checker": "http://www.mississauga.ca/portal/pb/zoning",
+    "zoning_bylaw": "https://www.mississauga.ca/apps/zoningbylaw/",
+    "property_information_tool": "https://www.mississauga.ca/services-and-programs/building-and-renovating/find-property-information/",
+    "permit_history_by_address": "https://www.mississauga.ca/services-and-programs/building-and-renovating/find-property-information/",
+    "building_bylaw": "https://www.mississauga.ca/publication/building-by-law/",
+    "building_bylaw_number": "0236-2024 (effective January 2, 2025)",
+    "fee_schedule_page": "https://www.mississauga.ca/publication/building-permit-fee-schedule/",
+    "fee_schedule_pdf_2025": "https://www.mississauga.ca/wp-content/uploads/2025/01/16121116/building-permit-fee-schedule.pdf",
+    "general_fees_charges_2026": "https://www.mississauga.ca/wp-content/uploads/2026/01/06115402/Schedule-A-General-Fees-and-Charges.pdf",
+    "when_permit_required": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/when-a-building-permit-is-required/",
+    "application_process": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/building-permit-application-process/",
+    "permit_cost_and_timeframes": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/building-permit-cost-and-time-frames/",
+    "drawings_and_documents": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/drawings-and-documents-you-need-for-a-building-permit/",
+    "forms_and_documents": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/building-documents-and-forms/",
+    "inspections": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-permits/building-permit-inspections/",
+    "book_inspection": "https://www20.mississauga.ca/portal/services/scheduleinspection",
+    "building_more_units": "https://www.mississauga.ca/services-and-programs/building-and-renovating/building-more-units-on-your-property/",
+    "aru_incentives_table": "https://www.mississauga.ca/publication/gentle-density-table-of-incentives/",
+    "heritage_properties": "https://www.mississauga.ca/services-and-programs/building-and-renovating/heritage-properties/",
+    "sign_permits": "https://www.mississauga.ca/services-and-programs/building-and-renovating/sign-permits/",
+    "change_of_use_guide": "https://www.mississauga.ca/wp-content/uploads/2020/07/29125641/Changes-in-the-Use-of-a-Building.pdf",
+    "zoning_certificate_of_occupancy": "https://www.mississauga.ca/services-and-programs/building-and-renovating/zoning-information/zoning-certificate-of-occupancy/",
+    "fence_regulations": "https://www.mississauga.ca/services-and-programs/home-and-yard/fences/",
+    "fence_bylaw": "https://www.mississauga.ca/publication/fence-by-law/",
+    "accessory_structures_zoning": "https://www.mississauga.ca/services-and-programs/building-and-renovating/zoning-information/zoning-for-residential-projects/accessory-buildings-and-structures/",
+    "second_unit_code_guidelines": "https://www.mississauga.ca/publication/guidelines-to-build-second-units/",
+    "pre_approved_studio_garden_suite": "https://mississauga.ca/publication/pre-approved-studio-garden-suite-plans/",
+    "pre_approved_one_bedroom_garden_suite": "https://mississauga.ca/publication/pre-approved-one-bedroom-garden-suite-plans/",
+    "aru_bylaw": "https://www.mississauga.ca/wp-content/uploads/2024/05/29163554/by-law-0174-2023.pdf",
+    "fourplex_bylaw": "https://www.mississauga.ca/wp-content/uploads/2024/05/29201228/by-law-0196-2023.pdf",
+    "applicable_law_form": "https://www.mississauga.ca/publication/applicable-law/",
+    "open_data_building_permits": "https://data.mississauga.ca/datasets/building-permits"
+  },
+  "inspection_process": {
+    "booking_url": "https://www20.mississauga.ca/portal/services/scheduleinspection",
+    "hours": "Monday to Friday, 8:30 a.m. to 4:30 p.m.",
+    "note": "Schedule inspection BEFORE covering work with insulation, drywall, gravel, concrete, or other materials.",
+    "types": [
+      {
+        "name": "HVAC Inspection",
+        "stage": "Rough-in",
+        "checks": [
+          "Ductwork installation",
+          "Bathroom fan venting",
+          "Kitchen hood specs (min 6-inch diameter)",
+          "Return air register placement per approved drawings"
+        ]
+      },
+      {
+        "name": "Plumbing Inspection",
+        "stage": "Inside drain and rough-in",
+        "checks": [
+          "Underground plumbing (before slab pour)",
+          "Plumbing rough-in between studs",
+          "Fixture venting",
+          "Standpipe for washing machines",
+          "Pipe protection at penetrations"
+        ]
+      },
+      {
+        "name": "Framing Inspection",
+        "stage": "After HVAC/plumbing rough-in passes",
+        "checks": [
+          "Prior rough-in inspections completed and passed",
+          "Firestopping installation",
+          "Ceiling heights per drawings",
+          "Structural compliance"
+        ]
+      },
+      {
+        "name": "Fire Inspection",
+        "stage": "Per fire protection requirements",
+        "contact": "fire.prevention@mississauga.ca or 905-896-5908"
+      }
+    ],
+    "preparation": [
+      "Post the building permit card visibly on site",
+      "Have all permit documents and approved drawings on site (colour, min 11\u00c3\u201417 inch)",
+      "Ensure previous stage inspections are passed before requesting next",
+      "Maintain inspector access to all areas of work"
+    ]
+  },
+  "processing_times": {
+    "prescreen": "7\u00e2\u20ac\u201c10 business days",
+    "first_review_residential": "10 business days",
+    "first_review_second_units": "15 business days",
+    "first_review_non_residential": "20 business days",
+    "total_average": {
+      "new_residential_detached_semi": "13 weeks",
+      "residential_alteration": "7 weeks",
+      "second_unit": "10 weeks",
+      "new_non_residential": "12 weeks",
+      "non_residential_alteration": "9 weeks"
+    },
+    "note": "Incomplete applications and resubmissions fall outside standard timelines and may add 2+ weeks per resubmission cycle."
+  }
+}

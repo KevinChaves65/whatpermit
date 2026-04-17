@@ -1,6 +1,6 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
-  import { checkPermit } from '$lib/services/permitService';
+  import { checkPermit, PermitNotFoundError } from '$lib/services/permitService';
 
   let city = '';
   let projectType = '';
@@ -22,7 +22,11 @@
       sessionStorage.setItem('permitResult', JSON.stringify(data));
       goto('/lookup');
     } catch (err) {
-      error = 'Could not retrieve permit information. Please try again.';
+      if (err instanceof PermitNotFoundError) {
+        error = `No permit data available for "${projectType}" in ${city}. Try a different project type or city.`;
+      } else {
+        error = 'Could not retrieve permit information. Please try again.';
+      }
     } finally {
       loading = false;
     }
@@ -47,6 +51,7 @@
         <select id="city" bind:value={city} class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-400">
           <option value="">Select city</option>
           <option value="Toronto">Toronto</option>
+          <option value="Mississauga">Mississauga</option>
         </select>
       </div>
 
@@ -59,6 +64,7 @@
             <option value="new-building">New Building</option>
             <option value="addition">Home Addition</option>
             <option value="garage">Garage / Carport</option>
+            <option value="garage-conversion">Garage Conversion</option>
             <option value="shed">Shed</option>
             <option value="deck">Deck / Porch</option>
             <option value="temporary-structure">Tent / Canopy (Temporary Structure)</option>
@@ -67,6 +73,8 @@
           <optgroup label="Renovations & Interior">
             <option value="renovation">Interior Renovation</option>
             <option value="basement">Basement / Second Suite</option>
+            <option value="second-unit">Additional Residential Unit (ARU)</option>
+            <option value="basement-entrance">Basement Walkout / Below-Grade Entrance</option>
             <option value="change-of-use">Change of Use</option>
             <option value="cabinetry">Cabinetry / Millwork</option>
             <option value="insulation">Insulation</option>
@@ -75,7 +83,9 @@
           <optgroup label="Exterior & Structure">
             <option value="retaining-wall">Retaining Wall</option>
             <option value="demolition">Demolition</option>
+            <option value="exterior-alteration">Exterior Alterations (Siding / Windows / Roofing)</option>
             <option value="cladding">Cladding / Siding</option>
+            <option value="fence">Fence</option>
           </optgroup>
 
           <optgroup label="Roof & Windows">
@@ -88,6 +98,7 @@
             <option value="mechanical-plumbing">HVAC / Plumbing / Furnace</option>
             <option value="backwater-valve">Backwater Valve</option>
             <option value="backflow-prevention">Backflow Prevention</option>
+            <option value="fire-safety">Fire Safety Systems</option>
           </optgroup>
 
           <optgroup label="Energy & Environment">
