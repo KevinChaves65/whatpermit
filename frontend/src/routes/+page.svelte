@@ -47,8 +47,6 @@
         <select id="city" bind:value={city} class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-400">
           <option value="">Select city</option>
           <option value="Toronto">Toronto</option>
-          <option value="Mississauga">Mississauga</option>
-          <option value="Oakville">Oakville</option>
         </select>
       </div>
 
@@ -56,20 +54,48 @@
         <label for="projectType" class="block text-sm font-semibold mb-1">Project Type</label>
         <select id="projectType" bind:value={projectType} class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-400">
           <option value="">What are you building?</option>
-          <option value="deck">Deck / Porch</option>
-          <option value="addition">Home Addition</option>
-          <option value="basement">Basement Renovation</option>
-          <option value="garage">Garage / Carport</option>
-          <option value="shed">Shed</option>
-          <option value="fence">Fence</option>
-          <option value="demolition">Demolition</option>
-          <option value="renovation">Interior Renovation</option>
-          <option value="chimney-fireplace">Chimney / Fireplace</option>
-          <option value="solar">Solar Panels</option>
-          <option value="retaining-wall">Retaining Wall</option>
-          <option value="mechanical-plumbing">HVAC / Plumbing</option>
-          <option value="window-door">Window / Door Replacement</option>
-          <option value="roof">Roof Replacement</option>
+
+          <optgroup label="New Construction">
+            <option value="new-building">New Building</option>
+            <option value="addition">Home Addition</option>
+            <option value="garage">Garage / Carport</option>
+            <option value="shed">Shed</option>
+            <option value="deck">Deck / Porch</option>
+            <option value="temporary-structure">Tent / Canopy (Temporary Structure)</option>
+          </optgroup>
+
+          <optgroup label="Renovations & Interior">
+            <option value="renovation">Interior Renovation</option>
+            <option value="basement">Basement / Second Suite</option>
+            <option value="change-of-use">Change of Use</option>
+            <option value="cabinetry">Cabinetry / Millwork</option>
+            <option value="insulation">Insulation</option>
+          </optgroup>
+
+          <optgroup label="Exterior & Structure">
+            <option value="retaining-wall">Retaining Wall</option>
+            <option value="demolition">Demolition</option>
+            <option value="cladding">Cladding / Siding</option>
+          </optgroup>
+
+          <optgroup label="Roof & Windows">
+            <option value="roof">Roof Replacement</option>
+            <option value="skylight">Skylight</option>
+            <option value="window-door">Window / Door Replacement</option>
+          </optgroup>
+
+          <optgroup label="Mechanical & Plumbing">
+            <option value="mechanical-plumbing">HVAC / Plumbing / Furnace</option>
+            <option value="backwater-valve">Backwater Valve</option>
+            <option value="backflow-prevention">Backflow Prevention</option>
+          </optgroup>
+
+          <optgroup label="Energy & Environment">
+            <option value="solar">Solar Panels</option>
+            <option value="chimney-fireplace">Chimney / Fireplace</option>
+            <option value="green-roof">Green Roof</option>
+            <option value="wind-turbine">Wind Turbine</option>
+          </optgroup>
         </select>
       </div>
 

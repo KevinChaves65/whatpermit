@@ -9,7 +9,6 @@
     "form_update_notice": "Effective February 16, 2026, all applications must use the updated Application for a Permit to Construct or Demolish form.",
     "notes": "This list is not exhaustive per the City of Toronto. When in doubt, contact Toronto Building at toronto.ca/building or call 311. Zoning By-law compliance is always required regardless of permit status."
   },
-
   "common_forms": {
     "note": "These forms appear on nearly every permit application. They are listed here once for reference and repeated in each rule's required_forms array with context-specific notes.",
     "F-001": {
@@ -79,178 +78,460 @@
       "url": "https://www.toronto.ca/wp-content/uploads/2023/09/8dfd-15-0039-BFPSP-Consent-to-Enter.pdf"
     }
   },
-
   "permit_required": [
     {
       "id": "PR-001",
       "project_type": "New building construction",
       "description": "Constructing any new building or structure.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [],
-      "keywords": ["new build", "new construction", "new house", "new home", "build from scratch"],
+      "keywords": [
+        "new build",
+        "new construction",
+        "new house",
+        "new home",
+        "build from scratch"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/guides-for-other-buildings/non-residential-building-permit/",
       "apply_online_url": null,
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies by project size and type — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies by project size and type — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-003", "mandatory": false, "notes": "Required if drawings bear a professional engineer's seal." },
-        { "form_id": "F-004", "mandatory": false, "notes": "Required where there is potential for damage to private or City trees." },
-        { "form_id": "F-005", "mandatory": true,  "notes": "Required for all new buildings. Must be signed by the designer." },
-        { "form_id": "F-006", "mandatory": false, "notes": "Required for new Part 9 residential buildings using prescriptive energy compliance." },
-        { "form_id": "F-007", "mandatory": false, "notes": "Alternative to F-006 when using performance-based energy compliance." },
-        { "form_id": "F-008", "mandatory": false, "notes": "Required for residential infill construction projects." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": false,
+          "notes": "Required if drawings bear a professional engineer's seal."
+        },
+        {
+          "form_id": "F-004",
+          "mandatory": false,
+          "notes": "Required where there is potential for damage to private or City trees."
+        },
+        {
+          "form_id": "F-005",
+          "mandatory": true,
+          "notes": "Required for all new buildings. Must be signed by the designer."
+        },
+        {
+          "form_id": "F-006",
+          "mandatory": false,
+          "notes": "Required for new Part 9 residential buildings using prescriptive energy compliance."
+        },
+        {
+          "form_id": "F-007",
+          "mandatory": false,
+          "notes": "Alternative to F-006 when using performance-based energy compliance."
+        },
+        {
+          "form_id": "F-008",
+          "mandatory": false,
+          "notes": "Required for residential infill construction projects."
+        }
+      ],
+      "job_type": "new-building"
     },
     {
       "id": "PR-002",
       "project_type": "Home addition – second or third storey",
       "description": "Adding a second or third floor to an existing building.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [],
-      "keywords": ["second storey", "third storey", "second floor", "third floor", "add a floor", "pop top"],
+      "keywords": [
+        "second storey",
+        "third storey",
+        "second floor",
+        "third floor",
+        "add a floor",
+        "pop top"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/renovation-and-new-house-guides/small-residential-additions/",
       "apply_online_url": "https://www.toronto.ca/services-payments/building-construction/apply-for-a-building-permit/express-building-permits/express-building-permits-application/?appType=SR&subtopic=10066#submit",
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-003", "mandatory": false, "notes": "Required if drawings bear a professional engineer's seal." },
-        { "form_id": "F-004", "mandatory": false, "notes": "Required where there is potential for damage to private or City trees." },
-        { "form_id": "F-005", "mandatory": true,  "notes": "Required for all additions to existing buildings." },
-        { "form_id": "F-006", "mandatory": false, "notes": "Required for additions to Part 9 residential buildings using prescriptive energy compliance." },
-        { "form_id": "F-008", "mandatory": false, "notes": "Required for additions greater than 100 m²." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": false,
+          "notes": "Required if drawings bear a professional engineer's seal."
+        },
+        {
+          "form_id": "F-004",
+          "mandatory": false,
+          "notes": "Required where there is potential for damage to private or City trees."
+        },
+        {
+          "form_id": "F-005",
+          "mandatory": true,
+          "notes": "Required for all additions to existing buildings."
+        },
+        {
+          "form_id": "F-006",
+          "mandatory": false,
+          "notes": "Required for additions to Part 9 residential buildings using prescriptive energy compliance."
+        },
+        {
+          "form_id": "F-008",
+          "mandatory": false,
+          "notes": "Required for additions greater than 100 m²."
+        }
+      ],
+      "job_type": "addition"
     },
     {
       "id": "PR-003",
       "project_type": "Attached garage or carport",
       "description": "Constructing an attached garage or carport as an addition to an existing building.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [],
-      "keywords": ["attached garage", "attached carport", "garage addition"],
+      "keywords": [
+        "attached garage",
+        "attached carport",
+        "garage addition"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/small-residential-project-guides/garages-and-carports/",
       "apply_online_url": null,
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": 214.79, "unit": "flat fee", "effective": "2026-01-01" },
+      "fee": {
+        "amount": 214.79,
+        "unit": "flat fee",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-003", "mandatory": false, "notes": "Required if drawings bear a professional engineer's seal." },
-        { "form_id": "F-004", "mandatory": false, "notes": "Required where there is potential for damage to private or City trees." },
-        { "form_id": "F-005", "mandatory": true,  "notes": "Required for all new buildings and additions." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": false,
+          "notes": "Required if drawings bear a professional engineer's seal."
+        },
+        {
+          "form_id": "F-004",
+          "mandatory": false,
+          "notes": "Required where there is potential for damage to private or City trees."
+        },
+        {
+          "form_id": "F-005",
+          "mandatory": true,
+          "notes": "Required for all new buildings and additions."
+        }
+      ],
+      "job_type": "garage"
     },
     {
       "id": "PR-004",
       "project_type": "Sunroom or solarium",
       "description": "Adding a sunroom or solarium as an addition to an existing building.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [],
-      "keywords": ["sunroom", "solarium", "four-season room", "sun room"],
+      "keywords": [
+        "sunroom",
+        "solarium",
+        "four-season room",
+        "sun room"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/renovation-and-new-house-guides/small-residential-additions/",
       "apply_online_url": "https://www.toronto.ca/services-payments/building-construction/apply-for-a-building-permit/express-building-permits/express-building-permits-application/?appType=SR&subtopic=10066#submit",
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-003", "mandatory": false, "notes": "Required if drawings bear a professional engineer's seal." },
-        { "form_id": "F-004", "mandatory": false, "notes": "Required where there is potential for damage to private or City trees." },
-        { "form_id": "F-005", "mandatory": true,  "notes": "Required for all additions." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": false,
+          "notes": "Required if drawings bear a professional engineer's seal."
+        },
+        {
+          "form_id": "F-004",
+          "mandatory": false,
+          "notes": "Required where there is potential for damage to private or City trees."
+        },
+        {
+          "form_id": "F-005",
+          "mandatory": true,
+          "notes": "Required for all additions."
+        }
+      ],
+      "job_type": "addition"
     },
     {
       "id": "PR-005",
       "project_type": "Deck or porch addition (elevated)",
       "description": "Constructing a deck or porch more than 60 cm (24 inches) above ground level, or one that forms part of a required exit.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [
         "Deck finished level is MORE than 60 cm (24 inches) above adjacent finished grade",
         "OR the deck forms part of an exit required under the building code"
       ],
-      "keywords": ["deck", "porch", "elevated deck", "raised deck", "backyard deck", "front porch"],
+      "keywords": [
+        "deck",
+        "porch",
+        "elevated deck",
+        "raised deck",
+        "backyard deck",
+        "front porch"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/small-residential-project-guides/decks-and-porches/",
       "apply_online_url": "https://www.toronto.ca/services-payments/building-construction/apply-for-a-building-permit/express-building-permits/express-building-permits-application/?appType=SR&subtopic=10043#submit",
       "apply_email": null,
-      "fee": { "amount": 214.79, "unit": "flat fee", "effective": "2026-01-01" },
+      "fee": {
+        "amount": 214.79,
+        "unit": "flat fee",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions. Must use updated Feb 2026 version." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-003", "mandatory": false, "notes": "Required if drawings bear a professional engineer's seal." },
-        { "form_id": "F-004", "mandatory": false, "notes": "Required where there is potential for damage to private or City trees." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions. Must use updated Feb 2026 version."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": false,
+          "notes": "Required if drawings bear a professional engineer's seal."
+        },
+        {
+          "form_id": "F-004",
+          "mandatory": false,
+          "notes": "Required where there is potential for damage to private or City trees."
+        }
+      ],
+      "job_type": "deck"
     },
     {
       "id": "PR-006",
       "project_type": "Structural or material alterations (interior)",
       "description": "Making structural changes to an existing building: adding/removing walls, new windows/doors, enlarging or relocating openings, or enclosing an existing deck/porch/patio.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [],
-      "keywords": ["remove wall", "add wall", "load bearing wall", "open concept", "new window", "new door", "enlarge window", "relocate door", "enclose patio", "enclose deck", "enclose porch"],
+      "keywords": [
+        "remove wall",
+        "add wall",
+        "load bearing wall",
+        "open concept",
+        "new window",
+        "new door",
+        "enlarge window",
+        "relocate door",
+        "enclose patio",
+        "enclose deck",
+        "enclose porch"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/renovation-and-new-house-guides/interior-alterations/",
       "apply_online_url": "https://www.toronto.ca/services-payments/building-construction/apply-for-a-building-permit/express-building-permits/express-building-permits-application/?appType=SR&subtopic=10066#submit",
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": 11.53, "unit": "per m² (Group C, E and F)", "effective": "2026-01-01" },
+      "fee": {
+        "amount": 11.53,
+        "unit": "per m² (Group C, E and F)",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-003", "mandatory": false, "notes": "Required if drawings bear a professional engineer's seal." },
-        { "form_id": "F-009", "mandatory": false, "notes": "Required when the project includes plumbing work." },
-        { "form_id": "F-010", "mandatory": true,  "notes": "Required for all residential renovation permits." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": false,
+          "notes": "Required if drawings bear a professional engineer's seal."
+        },
+        {
+          "form_id": "F-009",
+          "mandatory": false,
+          "notes": "Required when the project includes plumbing work."
+        },
+        {
+          "form_id": "F-010",
+          "mandatory": true,
+          "notes": "Required for all residential renovation permits."
+        }
+      ],
+      "job_type": "renovation"
     },
     {
       "id": "PR-007",
       "project_type": "Shed (large)",
       "description": "Constructing a shed 15 m² (161 sq ft) or larger, or any shed attached to a building or with plumbing.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [
         "Shed area is 15 m² (161 sq ft) or larger",
         "OR shed is attached to an existing building (any size)",
         "OR shed has plumbing (any size)"
       ],
-      "keywords": ["shed", "garden shed", "storage shed", "large shed", "workshop shed"],
+      "keywords": [
+        "shed",
+        "garden shed",
+        "storage shed",
+        "large shed",
+        "workshop shed"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/accessory-guides-sheds-cabanas-and-accessory-guides-name-tbc/",
       "apply_online_url": null,
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-004", "mandatory": false, "notes": "Required where there is potential for damage to private or City trees." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-004",
+          "mandatory": false,
+          "notes": "Required where there is potential for damage to private or City trees."
+        }
+      ],
+      "job_type": "shed"
     },
     {
       "id": "PR-008",
       "project_type": "Detached accessory structure (garage, workshop, pool house)",
       "description": "Constructing a detached accessory structure larger than 10 m² (107 sq ft), or any size if attached to a building or has plumbing.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [
         "Structure is larger than 10 m² (107 sq ft)",
         "OR structure is attached to an existing building (any size)",
         "OR structure has plumbing (any size)"
       ],
-      "keywords": ["detached garage", "workshop", "detached carport", "pool house", "cabana", "garden suite", "backyard studio"],
+      "keywords": [
+        "detached garage",
+        "workshop",
+        "detached carport",
+        "pool house",
+        "cabana",
+        "garden suite",
+        "backyard studio"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/small-residential-project-guides/garages-and-carports/",
       "apply_online_url": "https://www.toronto.ca/services-payments/building-construction/apply-for-a-building-permit/express-building-permits/express-building-permits-application/?appType=SR&subtopic=10047#submit",
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": 214.79, "unit": "flat fee (residential carports/garages)", "effective": "2026-01-01" },
+      "fee": {
+        "amount": 214.79,
+        "unit": "flat fee (residential carports/garages)",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-003", "mandatory": false, "notes": "Required if drawings bear a professional engineer's seal." },
-        { "form_id": "F-004", "mandatory": false, "notes": "Required where there is potential for damage to private or City trees." },
-        { "form_id": "F-005", "mandatory": true,  "notes": "Required for new buildings and additions. Must be signed by the designer." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": false,
+          "notes": "Required if drawings bear a professional engineer's seal."
+        },
+        {
+          "form_id": "F-004",
+          "mandatory": false,
+          "notes": "Required where there is potential for damage to private or City trees."
+        },
+        {
+          "form_id": "F-005",
+          "mandatory": true,
+          "notes": "Required for new buildings and additions. Must be signed by the designer."
+        }
+      ],
+      "job_type": "garage"
     },
     {
       "id": "PR-009",
       "project_type": "Basement finishing (with structural, plumbing, HVAC, or second suite)",
       "description": "Finishing a basement involving structural changes, new plumbing/HVAC, underpinning, a basement entrance, or a second suite.",
-      "permit_types": ["Building Permit", "Plumbing Permit", "Mechanical Permit"],
+      "permit_types": [
+        "Building Permit",
+        "Plumbing Permit",
+        "Mechanical Permit"
+      ],
       "conditions": [
         "Work includes structural or material alterations",
         "OR installing or modifying heating and/or plumbing systems",
@@ -259,188 +540,451 @@
         "OR constructing a basement entrance",
         "OR adding a second suite / legal basement apartment"
       ],
-      "keywords": ["basement", "basement finishing", "basement renovation", "basement apartment", "second suite", "legal basement", "basement entrance", "underpinning", "basement bathroom", "basement plumbing"],
+      "keywords": [
+        "basement",
+        "basement finishing",
+        "basement renovation",
+        "basement apartment",
+        "second suite",
+        "legal basement",
+        "basement entrance",
+        "underpinning",
+        "basement bathroom",
+        "basement plumbing"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/additional-dwelling-unit-guides/secondary-suites/",
       "apply_online_url": "https://www.toronto.ca/services-payments/building-construction/apply-for-a-building-permit/express-building-permits/express-building-permits-application/?appType=SR&subtopic=10066#submit",
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": 4.93, "unit": "per m² (interior renovation baseline)", "effective": "2026-01-01" },
+      "fee": {
+        "amount": 4.93,
+        "unit": "per m² (interior renovation baseline)",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-003", "mandatory": false, "notes": "Required if drawings bear a professional engineer's seal — common for underpinning." },
-        { "form_id": "F-009", "mandatory": false, "notes": "Required when the project includes plumbing work. Submit alongside the building permit application." },
-        { "form_id": "F-010", "mandatory": true,  "notes": "Required for all residential renovation permits." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": false,
+          "notes": "Required if drawings bear a professional engineer's seal — common for underpinning."
+        },
+        {
+          "form_id": "F-009",
+          "mandatory": false,
+          "notes": "Required when the project includes plumbing work. Submit alongside the building permit application."
+        },
+        {
+          "form_id": "F-010",
+          "mandatory": true,
+          "notes": "Required for all residential renovation permits."
+        }
+      ],
+      "job_type": "basement"
     },
     {
       "id": "PR-010",
       "project_type": "Green roof or rooftop stormwater system",
       "description": "Installing a green roof or rooftop stormwater retention system.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [],
-      "keywords": ["green roof", "living roof", "rooftop garden", "stormwater retention", "rooftop stormwater"],
+      "keywords": [
+        "green roof",
+        "living roof",
+        "rooftop garden",
+        "stormwater retention",
+        "rooftop stormwater"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/guides-for-structures/green-roof-on-a-new-or-existing-building/",
       "apply_online_url": null,
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-003", "mandatory": false, "notes": "Required if drawings bear a professional engineer's seal." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": false,
+          "notes": "Required if drawings bear a professional engineer's seal."
+        }
+      ],
+      "job_type": "green-roof"
     },
     {
       "id": "PR-011",
       "project_type": "Wind turbine structure",
       "description": "Constructing a structure supporting a wind turbine generator with rated output more than 3 kW.",
-      "permit_types": ["Building Permit"],
-      "conditions": ["Rated output exceeds 3 kW"],
-      "keywords": ["wind turbine", "wind generator", "wind energy"],
+      "permit_types": [
+        "Building Permit"
+      ],
+      "conditions": [
+        "Rated output exceeds 3 kW"
+      ],
+      "keywords": [
+        "wind turbine",
+        "wind generator",
+        "wind energy"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/guides-for-structures/designated-structures/",
       "apply_online_url": null,
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-003", "mandatory": true,  "notes": "Engineering seal typically required for wind turbine structures." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": true,
+          "notes": "Engineering seal typically required for wind turbine structures."
+        }
+      ],
+      "job_type": "wind-turbine"
     },
     {
       "id": "PR-012",
       "project_type": "Solar collector or solar hot water system",
       "description": "Installing a solar collector system or solar hot water system.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [],
-      "keywords": ["solar panels", "solar collector", "solar hot water", "photovoltaic", "PV system"],
+      "keywords": [
+        "solar panels",
+        "solar collector",
+        "solar hot water",
+        "photovoltaic",
+        "PV system"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/guides-for-structures/solar-collectors/",
       "apply_online_url": null,
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        }
+      ],
+      "job_type": "solar"
     },
     {
       "id": "PR-013",
       "project_type": "Retaining wall (on or near public property)",
       "description": "Constructing a retaining wall more than 1 metre high on/adjacent to public property or private property accessible to the public.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [
         "Wall height exceeds 1 metre (3 ft 3 in)",
         "AND wall is on/adjacent to public property, a building entrance, or private property accessible to the public"
       ],
-      "keywords": ["retaining wall", "garden wall", "landscape wall"],
+      "keywords": [
+        "retaining wall",
+        "garden wall",
+        "landscape wall"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/",
       "apply_online_url": null,
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-003", "mandatory": false, "notes": "Likely required — retaining walls commonly need engineered drawings." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-003",
+          "mandatory": false,
+          "notes": "Likely required — retaining walls commonly need engineered drawings."
+        }
+      ],
+      "job_type": "retaining-wall"
     },
     {
       "id": "PR-014",
       "project_type": "Demolition",
       "description": "Demolishing or removing all or a portion of a building.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [],
-      "keywords": ["demolition", "tear down", "knock down", "remove building", "partial demolition"],
+      "keywords": [
+        "demolition",
+        "tear down",
+        "knock down",
+        "remove building",
+        "partial demolition"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/renovation-and-new-house-guides/residential-demolition-permit-with-replacement-building/",
       "apply_online_url": null,
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-008", "mandatory": false, "notes": "Required for residential demolition projects under the Residential Infill Construction strategy." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-008",
+          "mandatory": false,
+          "notes": "Required for residential demolition projects under the Residential Infill Construction strategy."
+        }
+      ],
+      "job_type": "demolition"
     },
     {
       "id": "PR-015",
       "project_type": "Chimney or fireplace installation or reconstruction",
       "description": "Installing or reconstructing a chimney or fireplace, including a wood burning stove or fireplace.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [],
-      "keywords": ["chimney", "fireplace", "wood stove", "wood burning stove", "wood fireplace", "reconstruct chimney"],
+      "keywords": [
+        "chimney",
+        "fireplace",
+        "wood stove",
+        "wood burning stove",
+        "wood fireplace",
+        "reconstruct chimney"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/",
       "apply_online_url": null,
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true, "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true, "notes": "Required for all designers except Engineers and Architects." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        }
+      ],
+      "job_type": "chimney-fireplace"
     },
     {
       "id": "PR-016",
       "project_type": "Heating or plumbing system installation or modification",
       "description": "Installing or modifying HVAC and/or plumbing systems beyond simple fixture replacement.",
-      "permit_types": ["Mechanical Permit", "Plumbing Permit"],
+      "permit_types": [
+        "Mechanical Permit",
+        "Plumbing Permit"
+      ],
       "conditions": [],
-      "keywords": ["HVAC", "heating system", "plumbing system", "ductwork", "furnace install", "boiler install", "new plumbing", "modify plumbing", "new HVAC"],
+      "keywords": [
+        "HVAC",
+        "heating system",
+        "plumbing system",
+        "ductwork",
+        "furnace install",
+        "boiler install",
+        "new plumbing",
+        "modify plumbing",
+        "new HVAC"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/standalone-plumbing-mechanical-and-drains/standalone-mechanical-hvac/",
       "apply_online_url": null,
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-009", "mandatory": false, "notes": "Required when applying for a plumbing permit." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-009",
+          "mandatory": false,
+          "notes": "Required when applying for a plumbing permit."
+        }
+      ],
+      "job_type": "mechanical-plumbing"
     },
     {
       "id": "PR-017",
       "project_type": "Backwater valve installation",
       "description": "Installing a backwater valve in a residential or multi-unit building.",
-      "permit_types": ["Plumbing Permit"],
+      "permit_types": [
+        "Plumbing Permit"
+      ],
       "conditions": [],
-      "keywords": ["backwater valve", "sewer backup", "flood protection valve"],
+      "keywords": [
+        "backwater valve",
+        "sewer backup",
+        "flood protection valve"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/standalone-plumbing-mechanical-and-drains/backwater-valve/",
       "apply_online_url": "https://www.toronto.ca/services-payments/building-construction/apply-for-a-building-permit/express-building-permits/express-building-permits-application/?appType=DR&subtopic=10067#submit",
       "apply_email": null,
-      "fee": { "amount": 38.67, "unit": "flat fee per valve", "effective": "2026-01-01" },
+      "fee": {
+        "amount": 38.67,
+        "unit": "flat fee per valve",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions. No plans required for 1- and 2-unit houses." },
-        { "form_id": "F-011", "mandatory": false, "notes": "Required when also installing a sump pump — needed to apply for the Basement Flooding Protection Subsidy Program." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions. No plans required for 1- and 2-unit houses."
+        },
+        {
+          "form_id": "F-011",
+          "mandatory": false,
+          "notes": "Required when also installing a sump pump — needed to apply for the Basement Flooding Protection Subsidy Program."
+        }
+      ],
+      "job_type": "backwater-valve"
     },
     {
       "id": "PR-018",
       "project_type": "Backflow prevention device installation",
       "description": "Installing a backflow prevention device.",
-      "permit_types": ["Plumbing Permit"],
+      "permit_types": [
+        "Plumbing Permit"
+      ],
       "conditions": [],
-      "keywords": ["backflow prevention", "backflow device", "backflow preventer"],
+      "keywords": [
+        "backflow prevention",
+        "backflow device",
+        "backflow preventer"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/before-you-apply-for-a-building-permit/building-permit-application-guides/standalone-plumbing-mechanical-and-drains/backflow-prevention-device-permit/",
       "apply_online_url": null,
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true, "notes": "Required for all submissions." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        }
+      ],
+      "job_type": "backflow-prevention"
     },
     {
       "id": "PR-019",
       "project_type": "Change of use",
       "description": "Changing a building's use (e.g. residential to commercial, single unit to multi-unit). A permit is required even if no construction is proposed.",
-      "permit_types": ["Building Permit"],
+      "permit_types": [
+        "Building Permit"
+      ],
       "conditions": [],
-      "keywords": ["change of use", "convert to commercial", "convert to rental", "convert to multi-unit", "residential to office", "single to duplex", "single to triplex"],
+      "keywords": [
+        "change of use",
+        "convert to commercial",
+        "convert to rental",
+        "convert to multi-unit",
+        "residential to office",
+        "single to duplex",
+        "single to triplex"
+      ],
       "guide_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/",
       "apply_online_url": null,
       "apply_email": "bldapplications@toronto.ca",
-      "fee": { "amount": null, "unit": "Varies — see fees page", "effective": "2026-01-01" },
+      "fee": {
+        "amount": null,
+        "unit": "Varies — see fees page",
+        "effective": "2026-01-01"
+      },
       "required_forms": [
-        { "form_id": "F-001", "mandatory": true,  "notes": "Required for all submissions." },
-        { "form_id": "F-002", "mandatory": true,  "notes": "Required for all designers except Engineers and Architects." },
-        { "form_id": "F-010", "mandatory": false, "notes": "Required if the change of use involves renovation of a residential unit." }
-      ]
+        {
+          "form_id": "F-001",
+          "mandatory": true,
+          "notes": "Required for all submissions."
+        },
+        {
+          "form_id": "F-002",
+          "mandatory": true,
+          "notes": "Required for all designers except Engineers and Architects."
+        },
+        {
+          "form_id": "F-010",
+          "mandatory": false,
+          "notes": "Required if the change of use involves renovation of a residential unit."
+        }
+      ],
+      "job_type": "change-of-use"
     }
   ],
-
   "permit_not_required": [
     {
       "id": "PNR-001",
@@ -451,93 +995,230 @@
         "Does NOT form part of an exit required under the building code",
         "Complies with the Zoning By-law"
       ],
-      "keywords": ["low deck", "ground level deck", "patio", "platform"],
-      "notes": "Zoning By-law compliance is still required even without a building permit."
+      "keywords": [
+        "low deck",
+        "ground level deck",
+        "patio",
+        "platform"
+      ],
+      "notes": "Zoning By-law compliance is still required even without a building permit.",
+      "job_type": "deck"
     },
     {
       "id": "PNR-002",
       "project_type": "Skylight installation (small building)",
-      "conditions": ["Building is 3 storeys or less", "Removal of no more than one rafter or joist — trusses are not exempt"],
-      "keywords": ["skylight", "roof window", "velux"]
+      "conditions": [
+        "Building is 3 storeys or less",
+        "Removal of no more than one rafter or joist — trusses are not exempt"
+      ],
+      "keywords": [
+        "skylight",
+        "roof window",
+        "velux"
+      ],
+      "job_type": "skylight"
     },
     {
       "id": "PNR-003",
       "project_type": "Re-cladding with non-combustible material",
-      "conditions": ["Building is 3 storeys or less", "Material is non-combustible", "Material is NOT brick or stone veneer"],
-      "keywords": ["cladding", "siding", "re-cladding", "exterior finish", "stucco", "metal cladding"]
+      "conditions": [
+        "Building is 3 storeys or less",
+        "Material is non-combustible",
+        "Material is NOT brick or stone veneer"
+      ],
+      "keywords": [
+        "cladding",
+        "siding",
+        "re-cladding",
+        "exterior finish",
+        "stucco",
+        "metal cladding"
+      ],
+      "job_type": "cladding"
     },
     {
       "id": "PNR-004",
       "project_type": "Adding or replacing insulation",
       "conditions": [],
-      "keywords": ["insulation", "attic insulation", "wall insulation", "spray foam", "batt insulation"]
+      "keywords": [
+        "insulation",
+        "attic insulation",
+        "wall insulation",
+        "spray foam",
+        "batt insulation"
+      ],
+      "job_type": "insulation"
     },
     {
       "id": "PNR-005",
       "project_type": "Window or door replacement (same size/location)",
-      "conditions": ["No change in location or size", "Structural support (lintel) not affected", "No new exit created"],
-      "keywords": ["replace window", "replace door", "window replacement", "door replacement"]
+      "conditions": [
+        "No change in location or size",
+        "Structural support (lintel) not affected",
+        "No new exit created"
+      ],
+      "keywords": [
+        "replace window",
+        "replace door",
+        "window replacement",
+        "door replacement"
+      ],
+      "job_type": "window-door"
     },
     {
       "id": "PNR-006",
       "project_type": "Furnace or boiler replacement (house)",
-      "conditions": ["Replacement only — not a new installation", "In a house"],
-      "keywords": ["replace furnace", "new furnace", "replace boiler", "furnace replacement", "boiler replacement"]
+      "conditions": [
+        "Replacement only — not a new installation",
+        "In a house"
+      ],
+      "keywords": [
+        "replace furnace",
+        "new furnace",
+        "replace boiler",
+        "furnace replacement",
+        "boiler replacement"
+      ],
+      "job_type": "mechanical-plumbing"
     },
     {
       "id": "PNR-007",
       "project_type": "Additional cooling, gas fireplace, or hot water tank (house)",
-      "conditions": ["In a house", "Addition to existing systems — not modification of the main system"],
-      "keywords": ["AC unit", "air conditioner", "gas fireplace", "hot water tank", "water heater", "humidifier"]
+      "conditions": [
+        "In a house",
+        "Addition to existing systems — not modification of the main system"
+      ],
+      "keywords": [
+        "AC unit",
+        "air conditioner",
+        "gas fireplace",
+        "hot water tank",
+        "water heater",
+        "humidifier"
+      ],
+      "job_type": "mechanical-plumbing"
     },
     {
       "id": "PNR-008",
       "project_type": "Plumbing fixture repair or replacement",
-      "conditions": ["Replacement only — no new drain or supply lines", "Fixture stays in the same location"],
-      "keywords": ["replace toilet", "replace faucet", "replace sink", "plumbing fixture", "fixture replacement"]
+      "conditions": [
+        "Replacement only — no new drain or supply lines",
+        "Fixture stays in the same location"
+      ],
+      "keywords": [
+        "replace toilet",
+        "replace faucet",
+        "replace sink",
+        "plumbing fixture",
+        "fixture replacement"
+      ],
+      "job_type": "mechanical-plumbing"
     },
     {
       "id": "PNR-009",
       "project_type": "Roof replacement (no structural work)",
-      "conditions": ["No structural work required", "Like-for-like material replacement"],
-      "keywords": ["roof replacement", "new shingles", "re-roof", "replace shingles", "roof repair"]
+      "conditions": [
+        "No structural work required",
+        "Like-for-like material replacement"
+      ],
+      "keywords": [
+        "roof replacement",
+        "new shingles",
+        "re-roof",
+        "replace shingles",
+        "roof repair"
+      ],
+      "job_type": "roof"
     },
     {
       "id": "PNR-010",
       "project_type": "Basic basement finishing (no structural, plumbing, or new suite)",
-      "conditions": ["No structural or material alterations", "No additional dwelling unit created", "No new plumbing"],
-      "keywords": ["finish basement", "basement drywall", "basement flooring", "basic basement", "basement rec room"],
-      "notes": "If any excluded conditions apply (structural changes, plumbing, or a new suite), a permit IS required. See PR-009."
+      "conditions": [
+        "No structural or material alterations",
+        "No additional dwelling unit created",
+        "No new plumbing"
+      ],
+      "keywords": [
+        "finish basement",
+        "basement drywall",
+        "basement flooring",
+        "basic basement",
+        "basement rec room"
+      ],
+      "notes": "If any excluded conditions apply (structural changes, plumbing, or a new suite), a permit IS required. See PR-009.",
+      "job_type": "basement"
     },
     {
       "id": "PNR-011",
       "project_type": "Basement waterproofing repairs",
       "conditions": [],
-      "keywords": ["waterproofing", "basement waterproofing", "damp proofing", "water sealing"]
+      "keywords": [
+        "waterproofing",
+        "basement waterproofing",
+        "damp proofing",
+        "water sealing"
+      ],
+      "job_type": "basement"
     },
     {
       "id": "PNR-012",
       "project_type": "Cabinetry and millwork installation",
-      "conditions": ["No plumbing modifications involved"],
-      "keywords": ["cabinets", "kitchen cabinets", "bathroom cabinets", "millwork", "built-in shelves", "cabinetry"]
+      "conditions": [
+        "No plumbing modifications involved"
+      ],
+      "keywords": [
+        "cabinets",
+        "kitchen cabinets",
+        "bathroom cabinets",
+        "millwork",
+        "built-in shelves",
+        "cabinetry"
+      ],
+      "job_type": "cabinetry"
     },
     {
       "id": "PNR-013",
       "project_type": "Seasonal plastic sheet covered structures",
-      "conditions": ["Installed on or after October 15th", "Removed on or before April 15th", "Complies with Zoning By-law"],
-      "keywords": ["snow canopy", "driveway tent", "car canopy", "automotive canopy", "temporary structure"]
+      "conditions": [
+        "Installed on or after October 15th",
+        "Removed on or before April 15th",
+        "Complies with Zoning By-law"
+      ],
+      "keywords": [
+        "snow canopy",
+        "driveway tent",
+        "car canopy",
+        "automotive canopy",
+        "temporary structure"
+      ],
+      "job_type": "temporary-structure"
     },
     {
       "id": "PNR-014",
       "project_type": "Retaining wall (private, not public-facing, under 1 m)",
-      "conditions": ["On private property only", "Not accessible to the public", "Height less than 1 metre at any location"],
-      "keywords": ["retaining wall", "garden wall", "landscape wall", "small retaining wall"]
+      "conditions": [
+        "On private property only",
+        "Not accessible to the public",
+        "Height less than 1 metre at any location"
+      ],
+      "keywords": [
+        "retaining wall",
+        "garden wall",
+        "landscape wall",
+        "small retaining wall"
+      ],
+      "job_type": "retaining-wall"
     },
     {
       "id": "PNR-015",
       "project_type": "Sump pump installation",
       "conditions": [],
-      "keywords": ["sump pump", "basement sump", "sump pit"]
+      "keywords": [
+        "sump pump",
+        "basement sump",
+        "sump pit"
+      ],
+      "job_type": "mechanical-plumbing"
     },
     {
       "id": "PNR-016",
@@ -549,7 +1230,13 @@
         "Used only for storage ancillary to a principal building on the lot",
         "Does NOT have plumbing"
       ],
-      "keywords": ["small shed", "storage shed", "garden shed", "backyard shed"]
+      "keywords": [
+        "small shed",
+        "storage shed",
+        "garden shed",
+        "backyard shed"
+      ],
+      "job_type": "shed"
     },
     {
       "id": "PNR-017",
@@ -559,10 +1246,16 @@
         "Not attached to a building",
         "Constructed more than 3 m from any other structure"
       ],
-      "keywords": ["tent", "party tent", "event tent", "temporary tent", "canopy tent"]
+      "keywords": [
+        "tent",
+        "party tent",
+        "event tent",
+        "temporary tent",
+        "canopy tent"
+      ],
+      "job_type": "temporary-structure"
     }
   ],
-
   "always_required_notes": [
     "Zoning By-law compliance is required for ALL projects, even those that do not require a building permit.",
     "This list is not exhaustive. When in doubt, contact Toronto Building via toronto.ca/building or call 311.",
@@ -571,7 +1264,6 @@
     "Failure to obtain required permits can result in costly construction delays, legal action, and/or the removal of completed work.",
     "Effective February 16, 2026, all permit applications must use the updated Application for a Permit to Construct or Demolish form."
   ],
-
   "forms_index_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/forms-documents-additional-resources/toronto-building-forms-index/",
   "apply_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/",
   "contact_url": "https://www.toronto.ca/services-payments/building-construction/building-permit/forms-documents-additional-resources/toronto-building-contact-us/",

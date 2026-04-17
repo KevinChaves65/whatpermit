@@ -34,6 +34,7 @@ func ResolvePermits(req models.PermitRequest) ([]models.PermitResponse, error) {
 		}
 
 		results = append(results, models.PermitResponse{
+			RuleID:         permit.RuleID,
 			PermitRequired: permit.PermitRequired,
 			PermitName:     permit.PermitName,
 			Description:    permit.Description,

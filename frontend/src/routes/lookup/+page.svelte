@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
+  import { bookmarks } from '$lib/bookmarks';
 
   type ZoningRules = {
     maxHeightM?: number;
@@ -40,6 +41,7 @@
   };
 
   type PermitRule = {
+    ruleId?: string;
     permitRequired: boolean;
     permitName: string;
     description?: string;
@@ -64,19 +66,45 @@
 
   let result: Result | null = null;
   let error = '';
+  // Set of ruleIds that are currently bookmarked
+  let bookmarkedRuleIds = new Set<string>();
 
   onMount(() => {
     const raw = sessionStorage.getItem('permitResult');
     if (!raw) {
-      error = 'No results found. Please go back and search again.';
+      goto('/');
       return;
     }
     try {
       result = JSON.parse(raw);
+      if (result) {
+        // Sync bookmarked state from store
+        let current: import('$lib/bookmarks').Bookmark[] = [];
+        const unsub = bookmarks.subscribe(v => { current = v; });
+        unsub();
+        bookmarkedRuleIds = new Set(
+          current
+            .filter(b => b.city === result!.city)
+            .map(b => b.ruleId)
+        );
+      }
     } catch {
       error = 'Could not load results. Please try again.';
     }
   });
+
+  function toggleRuleBookmark(rule: PermitRule) {
+    if (!result) return;
+    if (bookmarkedRuleIds.has(rule.ruleId ?? '')) {
+      bookmarks.removeByRule(result.city, rule.ruleId ?? '');
+      bookmarkedRuleIds.delete(rule.ruleId ?? '');
+      bookmarkedRuleIds = new Set(bookmarkedRuleIds); // trigger reactivity
+    } else {
+      bookmarks.add(result.city, result.jobType, rule.ruleId ?? '', rule.permitName, rule, result);
+      bookmarkedRuleIds.add(rule.ruleId ?? '');
+      bookmarkedRuleIds = new Set(bookmarkedRuleIds); // trigger reactivity
+    }
+  }
 
   // Separate required vs not-required rules for display
   $: requiredRules = result?.rules.filter(r => r.permitRequired) ?? [];
@@ -86,12 +114,14 @@
 <div class="min-h-screen bg-white px-6 py-10 flex flex-col items-center font-serif">
   <div class="max-w-3xl w-full">
 
-    <button
-      on:click={() => goto('/')}
-      class="text-sm text-gray-500 hover:text-red-600 mb-6 inline-block"
-    >
-      ← Back to search
-    </button>
+    <div class="flex items-center justify-between mb-6">
+      <button
+        on:click={() => goto('/')}
+        class="text-sm text-gray-500 hover:text-red-600"
+      >
+        ← Back to search
+      </button>
+    </div>
 
     {#if error}
       <p class="text-red-600">{error}</p>
@@ -114,7 +144,21 @@
 
           {#each requiredRules as rule}
             <div class="border border-red-200 rounded-xl p-6 mb-4 bg-red-50 space-y-4">
-              <p class="font-semibold text-base">{rule.permitName}</p>
+              <div class="flex items-start justify-between gap-3">
+                <p class="font-semibold text-base">{rule.permitName}</p>
+                {#if rule.ruleId}
+                  <button
+                    on:click={() => toggleRuleBookmark(rule)}
+                    class="shrink-0 text-sm px-2.5 py-1 rounded-md border transition
+                      {bookmarkedRuleIds.has(rule.ruleId)
+                        ? 'bg-red-600 text-white border-red-600 hover:bg-red-700'
+                        : 'bg-white text-gray-500 border-gray-300 hover:border-red-400 hover:text-red-600'}"
+                    title={bookmarkedRuleIds.has(rule.ruleId) ? 'Remove bookmark' : 'Save this permit'}
+                  >
+                    {bookmarkedRuleIds.has(rule.ruleId) ? '★ Saved' : '☆ Save'}
+                  </button>
+                {/if}
+              </div>
 
               {#if rule.description}
                 <p class="text-sm text-gray-700">{rule.description}</p>
@@ -268,7 +312,21 @@
 
           {#each notRequiredRules as rule}
             <div class="border border-green-200 rounded-xl p-6 mb-4 bg-green-50 space-y-4">
-              <p class="font-semibold text-base">{rule.permitName}</p>
+              <div class="flex items-start justify-between gap-3">
+                <p class="font-semibold text-base">{rule.permitName}</p>
+                {#if rule.ruleId}
+                  <button
+                    on:click={() => toggleRuleBookmark(rule)}
+                    class="shrink-0 text-sm px-2.5 py-1 rounded-md border transition
+                      {bookmarkedRuleIds.has(rule.ruleId)
+                        ? 'bg-red-600 text-white border-red-600 hover:bg-red-700'
+                        : 'bg-white text-gray-500 border-gray-300 hover:border-red-400 hover:text-red-600'}"
+                    title={bookmarkedRuleIds.has(rule.ruleId) ? 'Remove bookmark' : 'Save this permit'}
+                  >
+                    {bookmarkedRuleIds.has(rule.ruleId) ? '★ Saved' : '☆ Save'}
+                  </button>
+                {/if}
+              </div>
 
               {#if rule.description}
                 <p class="text-sm text-gray-700">{rule.description}</p>

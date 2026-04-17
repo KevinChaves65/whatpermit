@@ -88,6 +88,7 @@ type PermitRequest struct {
 
 // PermitResponse is what the API returns to the frontend.
 type PermitResponse struct {
+	RuleID         string         `json:"ruleId,omitempty"`
 	PermitRequired bool           `json:"permitRequired"`
 	PermitName     string         `json:"permitName"`
 	Description    string         `json:"description,omitempty"`

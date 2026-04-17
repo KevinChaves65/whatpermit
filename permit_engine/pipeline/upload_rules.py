@@ -71,8 +71,13 @@ def _slugify(text: str) -> str:
 
 
 def _resolve_job_type(rule: dict) -> str:
-    """Determine jobType from a rule entry using keyword matching."""
-    # Build a combined string from project_type + keywords to match against
+    """Determine jobType from a rule entry.
+    Uses the explicit 'job_type' field if present, otherwise falls back to keyword matching.
+    """
+    if rule.get("job_type"):
+        return rule["job_type"]
+
+    # Fallback: keyword matching (kept for rules without explicit job_type)
     keywords = rule.get("keywords", [])
     project_type = rule.get("project_type", "")
     haystack = (project_type + " " + " ".join(keywords)).lower()
@@ -81,7 +86,6 @@ def _resolve_job_type(rule: dict) -> str:
         if any(term in haystack for term in terms):
             return job_type
 
-    # Fallback: slugify the project_type
     return _slugify(project_type)
 
 

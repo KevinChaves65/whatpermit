@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"whatpermit/models"
 	"whatpermit/services"
 
@@ -26,7 +27,8 @@ func CheckPermit(c *fiber.Ctx) error {
 				"error": "No permit rules found for this city and project type",
 			})
 		}
-		return c.Status(500).JSON(fiber.Map{"error": "Internal server error"})
+		fmt.Printf("ResolvePermits error: %v\n", err)
+		return c.Status(500).JSON(fiber.Map{"error": err.Error()})
 	}
 
 	return c.JSON(fiber.Map{
