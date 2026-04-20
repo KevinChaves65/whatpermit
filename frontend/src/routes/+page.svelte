@@ -70,6 +70,7 @@
 
           <optgroup label="New Construction">
             <option value="new-building">New Building</option>
+            <option value="non-residential">Non-Residential Building / Alteration</option>
             <option value="addition">Home Addition</option>
             <option value="garage">Garage / Carport</option>
             <option value="garage-conversion">Garage Conversion</option>

@@ -8,7 +8,7 @@
   <nav class="flex items-center space-x-8 text-sm text-ink-900">
     <a href="/" class="hover:text-red-600 transition-colors">Home</a>
     <a href="/lookup" class="hover:text-red-600 transition-colors">Lookup</a>
-    <a href="/about" class="hover:text-red-600 transition-colors">Who am I</a>
+    <a href="https://kevinchaves.ca" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors">Who am I</a>
     <a href="/bookmarks" class="hover:text-red-600 transition-colors flex items-center gap-1">
       Saved
       {#if $bookmarkCount > 0}

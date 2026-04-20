@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 	"whatpermit/database"
 	"whatpermit/routes"
 
@@ -12,7 +13,7 @@ import (
 func main() {
 	app := fiber.New()
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:5173,http://localhost:5174,http://localhost:5175",
+		AllowOrigins: "http://localhost:5173,http://localhost:5174,http://localhost:5175,https://whatpermit.ca,https://www.whatpermit.ca",
 		AllowMethods: "GET,POST,OPTIONS",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
@@ -21,5 +22,9 @@ func main() {
 
 	routes.SetupRoutes(app)
 
-	log.Fatal(app.Listen(":8080"))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	log.Fatal(app.Listen(":" + port))
 }

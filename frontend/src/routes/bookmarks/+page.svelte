@@ -385,8 +385,8 @@
         {/each}
       </div>
 
-      <button on:click={() => bookmarks.clear()}
-        class="mt-8 text-xs text-gray-400 hover:text-red-500 underline">
+      <button on:click={() => { if (confirm('Remove all saved permits? This cannot be undone.')) bookmarks.clear(); }}
+        class="mt-8 text-xs text-ink-400 hover:text-red-500 underline">
         Clear all saved permits
       </button>
     {/if}
