@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { bookmarks, getProgress, FORM_TRIGGER_QUESTIONS } from '$lib/bookmarks';
+  import { bookmarks, getProgress, getTriggerQuestion } from '$lib/bookmarks';
   import { goto } from '$app/navigation';
   import type { Bookmark } from '$lib/bookmarks';
 
@@ -26,12 +26,12 @@
     return (rule.requiredForms ?? []).filter(f => f.mandatory);
   }
 
-  function conditionalWithQ(rule: PermitRule) {
-    return (rule.requiredForms ?? []).filter(f => !f.mandatory && FORM_TRIGGER_QUESTIONS[f.formId]);
+  function conditionalWithQ(rule: PermitRule, city: string) {
+    return (rule.requiredForms ?? []).filter(f => !f.mandatory && getTriggerQuestion(city, f.formId));
   }
 
-  function conditionalWithoutQ(rule: PermitRule) {
-    return (rule.requiredForms ?? []).filter(f => !f.mandatory && !FORM_TRIGGER_QUESTIONS[f.formId]);
+  function conditionalWithoutQ(rule: PermitRule, city: string) {
+    return (rule.requiredForms ?? []).filter(f => !f.mandatory && !getTriggerQuestion(city, f.formId));
   }
 
   function formatDate(iso: string) {
@@ -40,27 +40,49 @@
     });
   }
 
+  // Per-card editing state: bookmarkId → draft label string
+  let editingId: string | null = null;
+  let editDraft = '';
+
+  function startEdit(bookmark: Bookmark) {
+    editingId = bookmark.id;
+    editDraft = bookmark.label || bookmark.permitName;
+  }
+
+  function commitEdit(bookmark: Bookmark) {
+    bookmarks.updateLabel(bookmark.id, editDraft);
+    editingId = null;
+  }
+
+  function cancelEdit() {
+    editingId = null;
+  }
+
+  function focusInput(el: HTMLElement) {
+    el.focus();
+  }
+
   // Step numbering — skip step if nothing to show
-  function stepNumbers(rule: PermitRule) {
-    const hasConditionsOrQ = (rule.conditions?.length ?? 0) > 0 || conditionalWithQ(rule).length > 0;
+  function stepNumbers(rule: PermitRule, city: string) {
+    const hasTriggerQs = conditionalWithQ(rule, city).length > 0;
     const hasForms = mandatory(rule).length > 0 || (rule.requiredForms ?? []).length > 0;
     let n = 0;
     return {
-      step1: hasConditionsOrQ ? ++n : 0,
+      step1: hasTriggerQs ? ++n : 0,
       step2: hasForms ? ++n : 0,
       step3: rule.permitRequired ? ++n : 0,
     };
   }
 </script>
 
-<div class="min-h-screen bg-white px-6 py-10 flex flex-col items-center font-serif">
+<div class="min-h-screen bg-cream-100 px-6 py-10 flex flex-col items-center font-serif">
   <div class="max-w-3xl w-full">
 
-    <h2 class="text-3xl font-serif mb-1">My Permit Checklist</h2>
-    <p class="text-sm text-gray-500 mb-8">Track your progress gathering documents for each saved permit.</p>
+    <h2 class="text-3xl font-serif mb-1 text-ink-900">My Permit Checklist</h2>
+    <p class="text-sm text-ink-500 mb-8">Track your progress gathering documents for each saved permit.</p>
 
     {#if $bookmarks.length === 0}
-      <div class="border border-gray-200 rounded-xl p-10 text-center text-gray-400">
+      <div class="border border-cream-300 rounded-xl p-10 text-center text-ink-400">
         <p class="text-lg mb-2">No saved permits yet.</p>
         <p class="text-sm mb-6">Search for a permit and click <strong>☆ Save</strong> on the results page.</p>
         <button on:click={() => goto('/')}
@@ -78,18 +100,37 @@
           {@const submitted = bookmark.checklist?.applied ?? false}
           {@const pct = progress.total > 0 ? Math.round((progress.done / progress.total) * 100) : 0}
 
-          <div class="border rounded-xl overflow-hidden transition-colors
-            {submitted ? 'border-green-400' : gatheringDone ? 'border-amber-400' : 'border-gray-200'}">
+          <div class="border rounded-xl overflow-hidden transition-colors bg-white
+            {submitted ? 'border-green-400' : gatheringDone ? 'border-amber-400' : 'border-cream-300'}">
 
             <!-- ── Card header ── -->
             <div class="px-6 py-4 flex items-start justify-between gap-4
-              {submitted ? 'bg-green-50' : gatheringDone ? 'bg-amber-50' : 'bg-gray-50'}">
+              {submitted ? 'bg-green-50' : gatheringDone ? 'bg-amber-50' : 'bg-white'}">
               <div class="flex-1 min-w-0">
-                <div class="flex items-center gap-2 flex-wrap">
-                  <p class="font-semibold text-base leading-snug">{bookmark.permitName}</p>
+                <!-- Editable title -->
+                <div class="flex items-start gap-2 flex-wrap">
+                  {#if editingId === bookmark.id}
+                    <input
+                      type="text"
+                      bind:value={editDraft}
+                      on:keydown={e => { if (e.key === 'Enter') commitEdit(bookmark); if (e.key === 'Escape') cancelEdit(); }}
+                      on:blur={() => commitEdit(bookmark)}
+                      class="flex-1 font-semibold text-base border-b border-ink-300 bg-transparent focus:outline-none focus:border-red-500 text-ink-900"
+                      use:focusInput
+                    />
+                  {:else}
+                    <button
+                      on:click={() => startEdit(bookmark)}
+                      class="font-semibold text-base leading-snug text-left hover:text-red-600 transition-colors group flex items-center gap-1.5"
+                      title="Click to rename"
+                    >
+                      {bookmark.label || bookmark.permitName}
+                      <span class="text-ink-300 group-hover:text-red-400 text-xs font-normal transition-colors">✎</span>
+                    </button>
+                  {/if}
                   {#if submitted}
                     <span class="text-xs font-semibold bg-green-600 text-white px-2 py-0.5 rounded-full">
-                      ✓ Submitted
+                      Submitted
                     </span>
                   {:else if gatheringDone}
                     <span class="text-xs font-semibold bg-amber-500 text-white px-2 py-0.5 rounded-full">
@@ -97,12 +138,12 @@
                     </span>
                   {/if}
                 </div>
-                <p class="text-xs text-gray-400 mt-0.5">{bookmark.city} &mdash; saved {formatDate(bookmark.savedAt)}</p>
+                <p class="text-xs text-ink-400 mt-0.5">{bookmark.permitName} &mdash; {bookmark.city} &mdash; saved {formatDate(bookmark.savedAt)}</p>
 
                 <!-- Progress bar -->
                 <div class="mt-3">
                   <div class="flex items-center justify-between mb-1">
-                    <span class="text-xs text-gray-500">
+                    <span class="text-xs text-ink-500">
                       {#if submitted}
                         Application submitted
                       {:else if gatheringDone}
@@ -111,9 +152,9 @@
                         {progress.done} of {progress.total} steps complete
                       {/if}
                     </span>
-                    <span class="text-xs font-semibold {gatheringDone ? 'text-amber-600' : 'text-gray-400'}">{pct}%</span>
+                    <span class="text-xs font-semibold {gatheringDone ? 'text-amber-600' : 'text-ink-400'}">{pct}%</span>
                   </div>
-                  <div class="h-1.5 bg-gray-200 rounded-full overflow-hidden">
+                  <div class="h-1.5 bg-cream-200 rounded-full overflow-hidden">
                     <div class="h-full rounded-full transition-all duration-300
                       {submitted ? 'bg-green-500' : gatheringDone ? 'bg-amber-500' : 'bg-red-500'}"
                       style="width: {pct}%">
@@ -123,79 +164,70 @@
               </div>
 
               <button on:click={() => bookmarks.remove(bookmark.id)}
-                class="shrink-0 text-gray-400 hover:text-red-600 transition text-lg leading-none mt-0.5"
-                aria-label="Remove bookmark">✕</button>
+                class="shrink-0 text-ink-300 hover:text-red-600 transition text-base leading-none mt-0.5"
+                aria-label="Remove bookmark">&times;</button>
             </div>
 
             {#if rule}
-              {@const steps = stepNumbers(rule)}
-              <div class="divide-y divide-gray-100">
+              {@const steps = stepNumbers(rule, bookmark.city)}
+              <div class="divide-y divide-cream-200">
 
-                <!-- ── Step 1: Conditions + trigger questions ── -->
+                <!-- ── Conditions: informational statements only ── -->
+                {#if rule.conditions && rule.conditions.length > 0}
+                  <div class="px-6 py-4 bg-cream-50">
+                    <p class="text-xs font-semibold uppercase tracking-wide text-ink-400 mb-3">
+                      {rule.permitRequired ? 'Conditions' : 'Exemption conditions'}
+                    </p>
+                    <ul class="space-y-1.5">
+                      {#each rule.conditions as condition}
+                        <li class="flex items-start gap-2 text-sm text-ink-700">
+                          <span class="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-ink-300"></span>
+                          {condition}
+                        </li>
+                      {/each}
+                    </ul>
+                  </div>
+                {/if}
+
+                <!-- ── Step 1: Trigger questions ── -->
                 {#if steps.step1}
                   <div class="px-6 py-5 space-y-4">
-                    <p class="text-xs font-semibold uppercase tracking-wide text-gray-400">
-                      Step {steps.step1} — {rule.permitRequired ? 'Confirm conditions & answer questions' : 'Verify exemption conditions'}
+                    <p class="text-xs font-semibold uppercase tracking-wide text-ink-400">
+                      Step {steps.step1} — Answer questions
                     </p>
 
-                    <!-- Condition checkboxes -->
-                    {#if rule.conditions && rule.conditions.length > 0}
-                      <ul class="space-y-2">
-                        {#each rule.conditions as condition, i}
-                          {@const checked = bookmark.checklist?.conditions?.[i] ?? false}
-                          <li class="flex items-start gap-3">
-                            <button
-                              on:click={() => bookmarks.toggleItem(bookmark.id, 'conditions', i)}
-                              class="mt-0.5 shrink-0 w-5 h-5 rounded border-2 flex items-center justify-center transition
-                                {checked ? 'bg-red-600 border-red-600 text-white' : 'border-gray-300 hover:border-red-400'}"
-                              aria-label="Toggle condition">
-                              {#if checked}<span class="text-xs leading-none">✓</span>{/if}
-                            </button>
-                            <span class="text-sm {checked ? 'line-through text-gray-400' : 'text-gray-700'}">{condition}</span>
-                          </li>
-                        {/each}
-                      </ul>
-                    {/if}
-
                     <!-- Trigger questions (Yes / No) -->
-                    {#if conditionalWithQ(rule).length > 0}
-                      {#if rule.conditions && rule.conditions.length > 0}
-                        <div class="border-t border-dashed border-gray-200 pt-4">
-                          <p class="text-xs text-gray-400 mb-3">Answer these to determine which additional forms you need:</p>
-                        </div>
-                      {/if}
-                      <ul class="space-y-4">
-                        {#each conditionalWithQ(rule) as form}
-                          {@const answer = bookmark.checklist?.triggers?.[form.formId] ?? null}
-                          <li class="space-y-2">
-                            <p class="text-sm text-gray-700">{FORM_TRIGGER_QUESTIONS[form.formId]}</p>
-                            <div class="flex gap-2">
-                              <button
-                                on:click={() => bookmarks.setTrigger(bookmark.id, form.formId, true)}
-                                class="px-4 py-1.5 text-sm rounded-md border font-medium transition
-                                  {answer === true
-                                    ? 'bg-red-600 text-white border-red-600'
-                                    : 'bg-white text-gray-600 border-gray-300 hover:border-red-400 hover:text-red-600'}">
-                                Yes
-                              </button>
-                              <button
-                                on:click={() => bookmarks.setTrigger(bookmark.id, form.formId, false)}
-                                class="px-4 py-1.5 text-sm rounded-md border font-medium transition
-                                  {answer === false
-                                    ? 'bg-gray-700 text-white border-gray-700'
-                                    : 'bg-white text-gray-600 border-gray-300 hover:border-gray-500 hover:text-gray-800'}">
-                                No
-                              </button>
-                              {#if answer === false}
-                                <span class="self-center text-xs text-gray-400">— form not required</span>
-                              {:else if answer === null}
-                                <span class="self-center text-xs text-amber-600">← answer to continue</span>
-                              {/if}
-                            </div>
-                          </li>
-                        {/each}
-                      </ul>
-                    {/if}
+                    <ul class="space-y-4">
+                      {#each conditionalWithQ(rule, bookmark.city) as form}
+                        {@const answer = bookmark.checklist?.triggers?.[form.formId] ?? null}
+                        <li class="space-y-2">
+                          <p class="text-sm text-ink-700">{getTriggerQuestion(bookmark.city, form.formId)}</p>
+                          <div class="flex gap-2">
+                            <button
+                              on:click={() => bookmarks.setTrigger(bookmark.id, form.formId, true)}
+                              class="px-4 py-1.5 text-sm rounded-md border font-medium transition
+                                {answer === true
+                                  ? 'bg-red-600 text-white border-red-600'
+                                  : 'bg-white text-ink-700 border-cream-300 hover:border-red-400 hover:text-red-600'}">
+                              Yes
+                            </button>
+                            <button
+                              on:click={() => bookmarks.setTrigger(bookmark.id, form.formId, false)}
+                              class="px-4 py-1.5 text-sm rounded-md border font-medium transition
+                                {answer === false
+                                  ? 'bg-ink-900 text-white border-ink-900'
+                                  : 'bg-white text-ink-700 border-cream-300 hover:border-ink-400 hover:text-ink-900'}">
+                              No
+                            </button>
+                            {#if answer === false}
+                              <span class="self-center text-xs text-ink-400">— form not required</span>
+                            {:else if answer === null}
+                              <span class="self-center text-xs text-amber-600">← answer to continue</span>
+                            {/if}
+                          </div>
+                        </li>
+                      {/each}
+                    </ul>
                   </div>
                 {/if}
 
@@ -232,7 +264,7 @@
                       {/if}
 
                       <!-- Conditional forms (with trigger questions) -->
-                      {#each conditionalWithQ(rule) as form}
+                      {#each conditionalWithQ(rule, bookmark.city) as form}
                         {@const answer = bookmark.checklist?.triggers?.[form.formId] ?? null}
                         {@const checked = bookmark.checklist?.forms?.[form.formId] ?? false}
                         {#if answer === true}
@@ -270,9 +302,9 @@
                       {/each}
 
                       <!-- Conditional forms without trigger questions -->
-                      {#if conditionalWithoutQ(rule).length > 0}
+                      {#if conditionalWithoutQ(rule, bookmark.city).length > 0}
                         <li class="text-xs font-semibold text-gray-400 uppercase tracking-wide mt-2">May be required</li>
-                        {#each conditionalWithoutQ(rule) as form}
+                        {#each conditionalWithoutQ(rule, bookmark.city) as form}
                           {@const checked = bookmark.checklist?.forms?.[form.formId] ?? false}
                           <li class="flex items-start gap-3">
                             <button
@@ -306,10 +338,10 @@
                     {#if submitted}
                       <!-- Submitted state -->
                       <div class="flex items-center gap-3">
-                        <span class="shrink-0 w-5 h-5 rounded border-2 bg-green-600 border-green-600 text-white flex items-center justify-center text-xs">✓</span>
-                        <span class="text-sm text-gray-500 line-through">Application submitted</span>
+                        <span class="shrink-0 w-5 h-5 rounded border-2 bg-green-600 border-green-600 text-white flex items-center justify-center text-xs leading-none">&#10003;</span>
+                        <span class="text-sm text-ink-400 line-through">Application submitted</span>
                         <button on:click={() => bookmarks.toggleItem(bookmark.id, 'applied')}
-                          class="text-xs text-gray-400 underline hover:text-red-500 ml-auto">Undo</button>
+                          class="text-xs text-ink-400 underline hover:text-red-500 ml-auto">Undo</button>
                       </div>
 
                     {:else if gatheringDone}
@@ -319,15 +351,15 @@
                         {#if rule.applyOnlineUrl}
                           <a href={rule.applyOnlineUrl} target="_blank" rel="noopener noreferrer"
                             class="inline-block text-sm font-semibold bg-red-600 text-white px-5 py-2 rounded-md hover:bg-red-700 transition">
-                            Apply Online →
+                            Apply Online
                           </a>
                         {:else}
-                          <p class="text-xs text-gray-500">Submit your application at your local Toronto Building office or via email.</p>
+                          <p class="text-xs text-ink-500">Submit your application at your local building office or via email.</p>
                         {/if}
                         <div class="pt-1">
                           <button on:click={() => bookmarks.toggleItem(bookmark.id, 'applied')}
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900">
-                            <span class="shrink-0 w-5 h-5 rounded border-2 border-gray-300 hover:border-green-500 flex items-center justify-center"></span>
+                            class="flex items-center gap-2 text-sm text-ink-700 hover:text-ink-900">
+                            <span class="shrink-0 w-5 h-5 rounded border-2 border-cream-300 hover:border-green-500 flex items-center justify-center"></span>
                             Mark as submitted
                           </button>
                         </div>
@@ -335,13 +367,12 @@
 
                     {:else}
                       <!-- Locked -->
-                      <div class="flex items-center gap-3 opacity-50 cursor-not-allowed select-none">
-                        <span class="shrink-0 w-5 h-5 rounded border-2 border-gray-300 flex items-center justify-center"></span>
+                      <div class="flex items-center gap-3 opacity-40 cursor-not-allowed select-none">
+                        <span class="shrink-0 w-5 h-5 rounded border-2 border-cream-300 flex items-center justify-center"></span>
                         <div>
-                          <p class="text-sm text-gray-500">Apply for your permit</p>
-                          <p class="text-xs text-gray-400">Complete steps {steps.step1}{steps.step2 ? ` & ${steps.step2}` : ''} to unlock</p>
+                          <p class="text-sm text-ink-700">Apply for your permit</p>
+                          <p class="text-xs text-ink-400">Complete steps {steps.step1}{steps.step2 ? ` & ${steps.step2}` : ''} to unlock</p>
                         </div>
-                        <span class="ml-auto text-xs text-gray-400">🔒</span>
                       </div>
                     {/if}
                   </div>

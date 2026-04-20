@@ -1,21 +1,31 @@
 import { writable, derived } from 'svelte/store';
 
-// Maps formId → the Yes/No question shown in the checklist.
+// Maps "City:formId" → the Yes/No question shown in the checklist.
+// Keyed by city so identical form IDs across cities don't collide.
 // If a conditional form has an entry here, the user must answer before it
 // counts toward (or is excluded from) progress.
 export const FORM_TRIGGER_QUESTIONS: Record<string, string> = {
-  'F-003': 'Will your project drawings bear the seal of a professional engineer?',
-  'F-004': 'Is there potential for damage to private or City trees on or near your property?',
-  'F-006': 'Are you using the prescriptive energy compliance method under OBC SB-12?',
-  'F-007': 'Are you using the performance-based energy compliance method under OBC SB-12?',
-  'F-008': 'Is this a residential infill construction project?',
-  'F-009': 'Does the project include any plumbing or drain work?',
-  'F-011': 'Are you also installing a sump pump as part of this project?',
+  // Toronto
+  'Toronto:F-003': 'Will your project drawings bear the seal of a professional engineer?',
+  'Toronto:F-004': 'Is there potential for damage to private or City trees on or near your property?',
+  'Toronto:F-006': 'Are you using the prescriptive energy compliance method under OBC SB-12?',
+  'Toronto:F-007': 'Are you using the performance-based energy compliance method under OBC SB-12?',
+  'Toronto:F-008': 'Is this a residential infill construction project?',
+  'Toronto:F-009': 'Does the project include any plumbing or drain work?',
+  'Toronto:F-011': 'Are you also installing a sump pump as part of this project?',
+
+  // Mississauga
+  'Mississauga:F-009': 'Are engineered roof trusses proposed for this project?',
 };
 
+/** Look up the trigger question for a form, scoped to the correct city. */
+export function getTriggerQuestion(city: string, formId: string): string | undefined {
+  return FORM_TRIGGER_QUESTIONS[`${city}:${formId}`];
+}
+
 export type ChecklistState = {
-  conditions: Record<number, boolean>;
-  triggers: Record<string, boolean | null>; // formId → true / false / null (unanswered)
+  conditions: Record<number, boolean | null>; // kept for backwards compat, no longer used for progress
+  triggers: Record<string, boolean | null>;   // formId → true / false / null (unanswered)
   forms: Record<string, boolean>;
   applied: boolean;
 };
@@ -55,19 +65,19 @@ function loadFromStorage(): Bookmark[] {
   }
 }
 
-function initChecklist(rule: unknown): ChecklistState {
+function initChecklist(rule: unknown, city: string): ChecklistState {
   const r = rule as {
     conditions?: string[];
     requiredForms?: { formId: string; mandatory: boolean }[];
   };
-  const conditions: Record<number, boolean> = {};
-  (r.conditions ?? []).forEach((_, i) => { conditions[i] = false; });
+  const conditions: Record<number, boolean | null> = {};
+  (r.conditions ?? []).forEach((_, i) => { conditions[i] = null; });
 
   const triggers: Record<string, boolean | null> = {};
   const forms: Record<string, boolean> = {};
   (r.requiredForms ?? []).forEach(f => {
     forms[f.formId] = false;
-    if (!f.mandatory && FORM_TRIGGER_QUESTIONS[f.formId]) {
+    if (!f.mandatory && getTriggerQuestion(city, f.formId)) {
       triggers[f.formId] = null; // unanswered
     }
   });
@@ -98,7 +108,7 @@ function createBookmarkStore() {
         label: `${city} – ${permitName}`,
         savedAt: new Date().toISOString(),
         rule, fullResult,
-        checklist: initChecklist(rule),
+        checklist: initChecklist(rule, city),
       };
       update(bookmarks => {
         const updated = [bookmark, ...bookmarks];
@@ -131,18 +141,43 @@ function createBookmarkStore() {
       });
     },
 
-    toggleItem(bookmarkId: string, section: 'conditions' | 'forms' | 'applied', key?: number | string) {
+    updateLabel(id: string, label: string) {
+      update(bookmarks => {
+        const updated = bookmarks.map(b => b.id === id ? { ...b, label: label.trim() || b.permitName } : b);
+        persist(updated);
+        return updated;
+      });
+    },
+
+    toggleItem(bookmarkId: string, section: 'forms' | 'applied', key?: string) {
       update(bookmarks => {
         const updated = bookmarks.map(b => {
           if (b.id !== bookmarkId) return b;
           const checklist = { ...emptyChecklist(), ...b.checklist };
           if (section === 'applied') {
             checklist.applied = !checklist.applied;
-          } else if (section === 'conditions' && key !== undefined) {
-            checklist.conditions = { ...checklist.conditions, [key]: !checklist.conditions[key as number] };
           } else if (section === 'forms' && key !== undefined) {
-            checklist.forms = { ...checklist.forms, [key]: !checklist.forms[key as string] };
+            checklist.forms = { ...checklist.forms, [key]: !checklist.forms[key] };
           }
+          return { ...b, checklist };
+        });
+        persist(updated);
+        return updated;
+      });
+    },
+
+    // Set a condition answer (true = yes, false = no, null = clear)
+    setCondition(bookmarkId: string, index: number, value: boolean) {
+      update(bookmarks => {
+        const updated = bookmarks.map(b => {
+          if (b.id !== bookmarkId) return b;
+          const checklist = { ...emptyChecklist(), ...b.checklist };
+          // clicking the already-active answer deselects it back to null
+          const current = checklist.conditions[index];
+          checklist.conditions = {
+            ...checklist.conditions,
+            [index]: current === value ? null : value,
+          };
           return { ...b, checklist };
         });
         persist(updated);
@@ -185,19 +220,19 @@ export function getProgress(bookmark: Bookmark): { done: number; total: number }
   };
   const cl: ChecklistState = { ...{ conditions: {}, triggers: {}, forms: {}, applied: false }, ...bookmark.checklist };
 
-  const conditions = rule.conditions ?? [];
   const allForms = rule.requiredForms ?? [];
   const mandatory = allForms.filter(f => f.mandatory);
-  const conditionalWithQ = allForms.filter(f => !f.mandatory && FORM_TRIGGER_QUESTIONS[f.formId]);
+  const conditionalWithQ = allForms.filter(f => !f.mandatory && getTriggerQuestion(bookmark.city, f.formId));
 
-  const condDone = conditions.filter((_, i) => cl.conditions[i]).length;
+  // Conditions are informational statements — they don't count toward progress.
+  // Progress is: answer all trigger questions + gather all mandatory forms + gather triggered forms.
   const trigDone = conditionalWithQ.filter(f => cl.triggers[f.formId] !== null && cl.triggers[f.formId] !== undefined).length;
   const mandDone = mandatory.filter(f => cl.forms[f.formId]).length;
   const triggered = conditionalWithQ.filter(f => cl.triggers[f.formId] === true);
   const triggeredDone = triggered.filter(f => cl.forms[f.formId]).length;
 
-  const total = conditions.length + conditionalWithQ.length + mandatory.length + triggered.length;
-  const done = condDone + trigDone + mandDone + triggeredDone;
+  const total = conditionalWithQ.length + mandatory.length + triggered.length;
+  const done = trigDone + mandDone + triggeredDone;
 
   return { done, total };
 }

@@ -111,7 +111,7 @@
   $: notRequiredRules = result?.rules.filter(r => !r.permitRequired) ?? [];
 </script>
 
-<div class="min-h-screen bg-white px-6 py-10 flex flex-col items-center font-serif">
+<div class="min-h-screen bg-cream-100 px-6 py-10 flex flex-col items-center font-serif">
   <div class="max-w-3xl w-full">
 
     <div class="flex items-center justify-between mb-6">
@@ -130,8 +130,8 @@
       <p class="text-gray-500">Loading...</p>
 
     {:else}
-      <h2 class="text-3xl font-serif mb-1">Permit Results</h2>
-      <p class="text-sm text-gray-500 mb-8">
+      <h2 class="text-3xl font-serif mb-1 text-ink-900">Permit Results</h2>
+      <p class="text-sm text-ink-500 mb-8">
         {result.city} &mdash; {result.jobType}
       </p>
 
@@ -139,11 +139,11 @@
       {#if requiredRules.length > 0}
         <div class="mb-8">
           <h3 class="text-lg font-semibold text-red-600 mb-4">
-            ⚠️ Permit Required ({requiredRules.length} rule{requiredRules.length > 1 ? 's' : ''})
+            Permit Required ({requiredRules.length} rule{requiredRules.length > 1 ? 's' : ''})
           </h3>
 
           {#each requiredRules as rule}
-            <div class="border border-red-200 rounded-xl p-6 mb-4 bg-red-50 space-y-4">
+            <div class="border border-red-200 rounded-xl p-6 mb-4 bg-cream-50 space-y-4">
               <div class="flex items-start justify-between gap-3">
                 <p class="font-semibold text-base">{rule.permitName}</p>
                 {#if rule.ruleId}
@@ -286,7 +286,7 @@
                 <p class="text-xs text-gray-500 italic">{rule.notes}</p>
               {/if}
 
-              <div class="pt-2 border-t border-red-200 text-xs text-gray-500 space-y-1">
+              <div class="pt-2 border-t border-cream-300 text-xs text-ink-500 space-y-1">
                 <p><strong>Authority:</strong> {rule.source.authority}</p>
                 <p><strong>Reference:</strong> {rule.source.section}</p>
                 <a
@@ -306,12 +306,12 @@
       <!-- PERMIT NOT REQUIRED RULES -->
       {#if notRequiredRules.length > 0}
         <div>
-          <h3 class="text-lg font-semibold text-green-700 mb-4">
-            ✅ No Permit Required ({notRequiredRules.length} rule{notRequiredRules.length > 1 ? 's' : ''})
+          <h3 class="text-lg font-semibold text-ink-700 mb-4">
+            No Permit Required ({notRequiredRules.length} rule{notRequiredRules.length > 1 ? 's' : ''})
           </h3>
 
           {#each notRequiredRules as rule}
-            <div class="border border-green-200 rounded-xl p-6 mb-4 bg-green-50 space-y-4">
+            <div class="border border-cream-300 rounded-xl p-6 mb-4 bg-cream-50 space-y-4">
               <div class="flex items-start justify-between gap-3">
                 <p class="font-semibold text-base">{rule.permitName}</p>
                 {#if rule.ruleId}
@@ -347,7 +347,7 @@
                 <p class="text-xs text-gray-500 italic">{rule.notes}</p>
               {/if}
 
-              <div class="pt-2 border-t border-green-200 text-xs text-gray-500">
+              <div class="pt-2 border-t border-cream-300 text-xs text-ink-500">
                 <p><strong>Authority:</strong> {rule.source.authority}</p>
               </div>
             </div>

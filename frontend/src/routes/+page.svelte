@@ -2,6 +2,15 @@
   import { goto } from '$app/navigation';
   import { checkPermit, PermitNotFoundError } from '$lib/services/permitService';
 
+  const phrases = [
+    'What Permit do you need? Look it up!',
+    'Yes! And Bobs your uncle!',
+    'Need a Permit? Which one? Look it up!',
+    'Checking for a permit? Enter what you need and see!'
+  ];
+
+  const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+
   let city = '';
   let projectType = '';
   let loading = false;
@@ -33,22 +42,21 @@
   }
 </script>
 
-<div class="min-h-screen bg-white flex flex-col font-serif">
+<div class="min-h-screen bg-cream-100 flex flex-col font-serif">
   <div class="flex flex-col items-center justify-center text-center px-6 py-20">
-    <h1 class="text-4xl md:text-5xl leading-tight max-w-2xl mb-10">
-      What do you need?<br />
-      Enter your details and we'll see what permits you need!
+    <h1 class="text-4xl md:text-5xl leading-tight max-w-2xl mb-10 text-ink-900">
+      {phrase}
     </h1>
 
-    <div class="bg-gray-50 border border-gray-200 rounded-xl p-8 w-full max-w-md space-y-5">
+    <div class="bg-cream-50 border border-cream-300 rounded-xl p-8 w-full max-w-md space-y-5 shadow-sm">
 
       {#if error}
         <div class="text-red-600 text-sm">{error}</div>
       {/if}
 
       <div class="text-left">
-        <label for="city" class="block text-sm font-semibold mb-1">City</label>
-        <select id="city" bind:value={city} class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-400">
+        <label for="city" class="block text-sm font-semibold mb-1 text-ink-700">City</label>
+        <select id="city" bind:value={city} class="w-full p-3 border border-cream-300 rounded-md text-sm bg-cream-50 text-ink-900 focus:outline-none focus:ring-2 focus:ring-red-400">
           <option value="">Select city</option>
           <option value="Toronto">Toronto</option>
           <option value="Mississauga">Mississauga</option>
@@ -56,8 +64,8 @@
       </div>
 
       <div class="text-left">
-        <label for="projectType" class="block text-sm font-semibold mb-1">Project Type</label>
-        <select id="projectType" bind:value={projectType} class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-red-400">
+        <label for="projectType" class="block text-sm font-semibold mb-1 text-ink-700">Project Type</label>
+        <select id="projectType" bind:value={projectType} class="w-full p-3 border border-cream-300 rounded-md text-sm bg-cream-50 text-ink-900 focus:outline-none focus:ring-2 focus:ring-red-400">
           <option value="">What are you building?</option>
 
           <optgroup label="New Construction">

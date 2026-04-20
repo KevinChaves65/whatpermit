@@ -1,8 +1,8 @@
-<div class="min-h-screen bg-white flex flex-col items-center justify-center px-6 py-20 font-serif">
+<div class="min-h-screen bg-cream-100 flex flex-col items-center justify-center px-6 py-20 font-serif">
   <div class="max-w-md w-full text-center space-y-6">
 
-    <h1 class="text-4xl font-serif">Kevin Chaves</h1>
-    <p class="text-gray-500 text-sm">Builder of WhatPermit</p>
+    <h1 class="text-4xl font-serif text-ink-900">Kevin Chaves</h1>
+    <p class="text-ink-500 text-sm">Builder of WhatPermit</p>
 
     <div class="flex flex-col items-center gap-3 pt-2">
       <a

@@ -3,13 +3,13 @@
   export let title = 'What Permit?';
 </script>
 
-<header class="flex justify-between items-center px-12 py-6 bg-white border-b">
+<header class="flex justify-between items-center px-12 py-6 bg-cream-100 border-b border-cream-300">
   <a href="/" class="text-red-600 font-bold text-lg">{title}</a>
-  <nav class="flex items-center space-x-8 text-sm text-gray-900">
-    <a href="/" class="hover:underline">Home</a>
-    <a href="/lookup" class="hover:underline">Lookup</a>
-    <a href="/about" class="hover:underline">Who we are</a>
-    <a href="/bookmarks" class="hover:underline flex items-center gap-1">
+  <nav class="flex items-center space-x-8 text-sm text-ink-900">
+    <a href="/" class="hover:text-red-600 transition-colors">Home</a>
+    <a href="/lookup" class="hover:text-red-600 transition-colors">Lookup</a>
+    <a href="/about" class="hover:text-red-600 transition-colors">Who am I</a>
+    <a href="/bookmarks" class="hover:text-red-600 transition-colors flex items-center gap-1">
       Saved
       {#if $bookmarkCount > 0}
         <span class="bg-red-600 text-white text-xs font-semibold px-1.5 py-0.5 rounded-full leading-none">

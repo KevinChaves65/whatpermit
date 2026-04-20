@@ -1,2 +1,22 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
+
+@theme {
+  /* Warm cream palette */
+  --color-cream-50:  #FAF7F3;
+  --color-cream-100: #F0E9DF;
+  --color-cream-200: #E4D9CC;
+  --color-cream-300: #D4C9BB;
+
+  /* Warm ink (replaces gray-900 / gray-700) */
+  --color-ink-900: #1C1A2C;
+  --color-ink-700: #3D3A4E;
+  --color-ink-500: #6B6560;
+  --color-ink-400: #9A948E;
+  --color-ink-300: #C4BEB8;
+}
+
+body {
+  background-color: var(--color-cream-100);
+  color: var(--color-ink-900);
+}
