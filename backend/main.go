@@ -13,7 +13,7 @@ import (
 func main() {
 	app := fiber.New()
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:5173,http://localhost:5174,http://localhost:5175,https://whatpermit.ca,https://www.whatpermit.ca,https://whatpermit.onrender.com",
+		AllowOrigins: "http://localhost:5173,http://localhost:5174,http://localhost:5175,https://whatpermit.ca,https://www.whatpermit.ca,https://whatpermit.onrender.com,https://whatpermit-backend.onrender.com",
 		AllowMethods: "GET,POST,OPTIONS",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
