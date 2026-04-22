@@ -7,7 +7,10 @@ import (
 )
 
 func SetupRoutes(app *fiber.App) {
-	api := app.Group("/api")
+	app.Get("/health", func(c *fiber.Ctx) error {
+		return c.SendString("ok")
+	})
 
+	api := app.Group("/api")
 	api.Post("/permit/check", controllers.CheckPermit)
 }
