@@ -111,7 +111,7 @@
   $: notRequiredRules = result?.rules.filter(r => !r.permitRequired) ?? [];
 </script>
 
-<div class="min-h-screen bg-cream-100 px-6 py-10 flex flex-col items-center font-serif">
+<div class="min-h-screen bg-cream-100 px-4 sm:px-6 py-8 sm:py-10 flex flex-col items-center font-serif">
   <div class="max-w-3xl w-full">
 
     <div class="flex items-center justify-between mb-6">
@@ -143,7 +143,7 @@
           </h3>
 
           {#each requiredRules as rule}
-            <div class="border border-red-200 rounded-xl p-6 mb-4 bg-cream-50 space-y-4">
+            <div class="border border-red-200 rounded-xl p-4 sm:p-6 mb-4 bg-cream-50 space-y-4">
               <div class="flex items-start justify-between gap-3">
                 <p class="font-semibold text-base">{rule.permitName}</p>
                 {#if rule.ruleId}
@@ -311,7 +311,7 @@
           </h3>
 
           {#each notRequiredRules as rule}
-            <div class="border border-cream-300 rounded-xl p-6 mb-4 bg-cream-50 space-y-4">
+            <div class="border border-cream-300 rounded-xl p-4 sm:p-6 mb-4 bg-cream-50 space-y-4">
               <div class="flex items-start justify-between gap-3">
                 <p class="font-semibold text-base">{rule.permitName}</p>
                 {#if rule.ruleId}

@@ -43,8 +43,8 @@
 </script>
 
 <div class="min-h-screen bg-cream-100 flex flex-col font-serif">
-  <div class="flex flex-col items-center justify-center text-center px-6 py-20">
-    <h1 class="text-4xl md:text-5xl leading-tight max-w-2xl mb-10 text-ink-900">
+  <div class="flex flex-col items-center justify-center text-center px-4 sm:px-6 py-10 sm:py-20">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl leading-tight max-w-2xl mb-8 sm:mb-10 text-ink-900">
       {phrase}
     </h1>
 

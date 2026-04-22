@@ -75,7 +75,7 @@
   }
 </script>
 
-<div class="min-h-screen bg-cream-100 px-6 py-10 flex flex-col items-center font-serif">
+<div class="min-h-screen bg-cream-100 px-4 sm:px-6 py-8 sm:py-10 flex flex-col items-center font-serif">
   <div class="max-w-3xl w-full">
 
     <h2 class="text-3xl font-serif mb-1 text-ink-900">My Permit Checklist</h2>
@@ -104,7 +104,7 @@
             {submitted ? 'border-green-400' : gatheringDone ? 'border-amber-400' : 'border-cream-300'}">
 
             <!-- ── Card header ── -->
-            <div class="px-6 py-4 flex items-start justify-between gap-4
+            <div class="px-4 sm:px-6 py-4 flex items-start justify-between gap-4
               {submitted ? 'bg-green-50' : gatheringDone ? 'bg-amber-50' : 'bg-white'}">
               <div class="flex-1 min-w-0">
                 <!-- Editable title -->
@@ -174,7 +174,7 @@
 
                 <!-- ── Conditions: informational statements only ── -->
                 {#if rule.conditions && rule.conditions.length > 0}
-                  <div class="px-6 py-4 bg-cream-50">
+                  <div class="px-4 sm:px-6 py-4 bg-cream-50">
                     <p class="text-xs font-semibold uppercase tracking-wide text-ink-400 mb-3">
                       {rule.permitRequired ? 'Conditions' : 'Exemption conditions'}
                     </p>
@@ -191,7 +191,7 @@
 
                 <!-- ── Step 1: Trigger questions ── -->
                 {#if steps.step1}
-                  <div class="px-6 py-5 space-y-4">
+                  <div class="px-4 sm:px-6 py-5 space-y-4">
                     <p class="text-xs font-semibold uppercase tracking-wide text-ink-400">
                       Step {steps.step1} — Answer questions
                     </p>
@@ -233,7 +233,7 @@
 
                 <!-- ── Step 2: Gather forms ── -->
                 {#if steps.step2 && rule.permitRequired}
-                  <div class="px-6 py-5 space-y-4">
+                  <div class="px-4 sm:px-6 py-5 space-y-4">
                     <p class="text-xs font-semibold uppercase tracking-wide text-gray-400">
                       Step {steps.step2} — Gather required forms
                     </p>
@@ -330,7 +330,7 @@
 
                 <!-- ── Step 3: Submit ── -->
                 {#if steps.step3 && rule.permitRequired}
-                  <div class="px-6 py-5">
+                  <div class="px-4 sm:px-6 py-5">
                     <p class="text-xs font-semibold uppercase tracking-wide text-gray-400 mb-4">
                       Step {steps.step3} — Submit your application
                     </p>
